@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Iotonomous Shop</title>
+
+	<link rel="shortcut icon" href="../img/content/favicon.png" type="image/x-icon" />
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/all.min.css" />
+	<link rel="stylesheet" href="../css/aos.css" />
+	<link rel="stylesheet" href="../css/fontawesome.min.css" />
+	<link rel="stylesheet" href="../css/slick-theme.css" />
+	<link rel="stylesheet" href="../css/slick.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/all.min.js"></script>
+	<script src="../js/aos.js"></script>
+	<script src="../js/slick.min.js"></script>
+	<script src="../js/typeit.min.js"></script>
+	<script src="../js/script.js"></script>
+	<script src="../js/Chart.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div id="brand-nav">
+				<div onclick="document.location.href='index.html'" class="pt-1">
+					<img src="../img/content/favicon.png" width="40px" alt="" />
+					<p style="font-size: 19px;" class="ml-2">Iotonomous</p>
+				</div>
+			</div>
+			<!-- 1e6795 Tua -->
+			<!-- 8bccf6 Muda -->
+			<div id="menu-nav">
+				<ul style="list-style: none;" id="ul-menu">
+					<li class="myMenu"><a href="../../index.html">HOME</a></li>
+					<li class="myMenu">
+						<a href="../page/learn.html">LEARN</a>
+					</li>
+					<li class="myMenu"><a href="forum.html">FORUMS</a></li>
+					<li class="myMenu"><a href="shop.html" class="active-nav">SHOP</a></li>
+					<li class="myMenu"><a href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
+					<li id="settingsNav">
+						<button class="btn btn-primary d-inline-block btn-sm px-4 position-relative" style="top: -5px;" onclick="window.location.href='../page/login.html'">
+							Signin
+						</button>
+					</li>
+					<li id="settingsClose" style="display: none;">
+						<i class="fas fa-times"></i>
+					</li>
+				</ul>
+			</div>
+			<script>
+				$("#search-nav").on("click", function () {
+					if (this.hash !== "") {
+						event.preventDefault();
+						var hash = this.hash;
+						$("html, body").animate({
+								scrollTop: $(hash).offset().top
+							},
+							1000,
+							function () {
+								window.location.hash = hash;
+							}
+						);
+					}
+					$("#input-search").focus();
+				});
+			</script>
+			<div id="menu-toggle">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<!-- <i class="fas fa-stream"></i> -->
+			</div>
+			<div id="menu-close">
+				<div class="line"></div>
+				<div class="line"></div>
+				<!-- <i class="fas fa-times"></i> -->
+			</div>
+		</nav>
+	</header>
+
+	<div class="container-fluit parallax py-5">
+		<div class="row pt-5">
+			<div class="col-md-5 offset-md-1 py-5">
+				<div class="px-3 text-white">
+					<h3>
+						Iotonomous Customer Support Forums
+					</h3>
+					<p>Thanks for stopping by! These forums are for Adafruit customers who need assistance with their
+						purchases from Iotonomous
+						Industries. Our staff can only assist Adafruit customers, thank you!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid py-4">
+		<div class="row">
+
+			<div class="col-md-3">
+
+				<div class="input-group my-4 mx-2">
+					<input type="text" class="bg-light form-control" id="myForumSearch" onkeyup="search()"
+						placeholder="Look for somethings..." aria-label="Search">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="button" id="button-addon">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</div>
+				<div class="mx-2">
+					<ul style="list-style: none; margin-left: 0px !important; margin-block-start: 0px !important; margin-inline-start: 0px !important; padding-inline-start: 0px !important"
+						class="shopFilter">
+						<h6 class="text-center border-top pt-3">Kategori</h6>
+						<li class="text-primary font-weight-bold mb-2 pt-2 allToggle"> <i
+								class="mr-3 fas fa-book"></i>All
+							Categories
+							(3)</li>
+						<li class="mb-2 projectToggle"><i class="mr-2 fas fa-cogs"></i>Project (2)</li>
+						<li class="productToggle"><i class="mr-2 fas fa-box"></i> Product (1)</li>
+						<li>
+							<h6 class="text-center mt-3 pt-3 mb-3 border-top">Price</h6>
+							<div class="d-flex">
+								<div class="form-group mr-2">
+									<input type="text" name="min" id="min" class="form-control" placeholder="Min">
+								</div>
+								<div class="form-group">
+									<input type="text" name="max" id="max" class="form-control" placeholder="Max">
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3 projectCard">
+				<div class="card border-0 my-3 myCardShop">
+					<div class="overflow-hidden bg-dark card-img-top myShopImg" style="height: 200px;">
+						<img class="card-img-top h-100 shopImage" data-toggle="modal" data-target="#modal1" src="../img/content/arduinoshop1.jpg" alt="">
+					</div>
+					<div class="modal fade" tabindex="-1" id="modal1">
+						<div class="modal-dialog modal-lg" role="img">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Image 1</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<img src="../img/content/arduinoshop1.jpg" class="w-100" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-body shopBody position-relative">
+						<p class="m-0 p-0 card-title shopTitle" style="font-size: .9rem;">Sensor Gerak Output LCD.<span
+								class="badge bg-primary text-white">New</span></p>
+						<p class="card-subtitle mb-2 py-1 bg-primary text-white px-3 position-absolute shopCategory">Project</p>
+						<div class="d-block mb-1" style="font-size: .7rem;">
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="far fa-star text-warning d-inline"></i>
+						</div>
+						<a href="#" class="btn btn-warning mt-3 px-4 btn-sm shopPrice">$10</a>
+						<a href="#" class="btn btn-light mt-3 btn-sm"><i class="fas fa-cart-plus"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 projectCard">
+				<div class="card border-0 my-3 myCardShop">
+					<div class="overflow-hidden bg-dark card-img-top myShopImg " style="height: 200px;">
+						<img class="card-img-top h-100 shopImage" data-toggle="modal" data-target="#modal2" src="../img/content/arduinoshop.jpg" alt="">
+					</div>
+					<div class="modal fade" tabindex="-1" id="modal2">
+						<div class="modal-dialog modal-lg" role="img">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Image 2</h5>
+									<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<img src="../img/content/arduinoshop.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-body shopBody position-relative">
+						<p class="m-0 p-0 card-title shopTitle" style="font-size: .9rem;">Implementasi Sensor Kartu.<span class="badge bg-primary text-white">New</span></p>
+						<p class="card-subtitle mb-2 py-1 bg-primary text-white px-3 position-absolute shopCategory">Project</p>
+						<div class="d-block mb-1" style="font-size: .7rem;">
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="far fa-star text-warning d-inline"></i>
+						</div>
+						<a href="#" class="btn btn-warning mt-3 px-4 btn-sm shopPrice">$14</a>
+						<a href="#" class="btn btn-light mt-3 btn-sm"><i class="fas fa-cart-plus"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 productCard">
+				<div class="card border-0 my-3 myCardShop">
+					<div class="overflow-hidden bg-dark card-img-top myShopImg" style="height: 200px;">
+						<img class="card-img-top h-100 shopImage" data-toggle="modal" data-target="#modal3" src="../img/content/guide3.jpg" alt="">
+					</div>
+					<div class="modal fade" tabindex="-1" id="modal3">
+						<div class="modal-dialog modal-lg" role="img">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Image 3</h5>
+									<button class="close" type="button" aria-label="Close" data-dismiss="modal">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<img src="../img/content/guide3.jpg" class="w-100" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-body shopBody position-relative">
+						<p class="m-0 p-0 card-title shopTitle" style="font-size: .9rem;">Arduino Project AutoDoor.<span class="badge bg-primary text-white">New</span></p>
+						<p class="card-subtitle mb-2 py-1 bg-primary text-white px-3 position-absolute shopCategory">Product</p>
+						<div class="d-block mb-1" style="font-size: .7rem;">
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="fas fa-star text-warning d-inline"></i>
+							<i class="far fa-star text-warning d-inline"></i>
+						</div>
+						<a href="#" class="btn btn-warning mt-3 px-4 btn-sm shopPrice">$50</a>
+						<a href="#" class="btn btn-light mt-3 btn-sm"><i class="fas fa-cart-plus"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="container-fluit footer py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 my-4">
+					<div class="d-flex mb-2">
+						<img src="../img/content/favicon.png" class="footerIcon" width="43px" alt="">
+						<h3 class="ml-4">Iotonomous</h3>
+					</div>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem esse ullam quia illo labore
+						perspiciatis pariatur blanditiis laboriosam similique cum, laborum aperiam nihil amet itaque.
+					</p>
+					<div class="grWhite"> </div>
+					<div>
+						<p>
+							<i class="fas fa-envelope mr-3"></i> khusnul20032002@gmail.com
+						</p>
+					</div>
+					<div class="grWhite"></div>
+					<div>
+						<p>
+							<i class="fas fa-phone mr-3"></i> (+62)882-1726-2025
+						</p>
+					</div>
+					<div class="grWhite"></div>
+					<div>
+						<p>
+							<i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan, EastJava
+						</p>
+					</div>
+					<div class="grWhite"></div>
+				</div>
+				<div class="col-md-3 my-4">
+					<h5 class="mb-4">Useful Links</h5>
+					<div class="row">
+						<div class="col-8 link">
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Quick Guides</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Terms of Service</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Privacy Policy</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Send Feedback</a></p>
+						</div>
+						<div class="col-4 link">
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">News</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 my-4">
+					<h6>
+						"Propel, propel, propel your craft softly down liquid solution. Ecstatically, ecstatically,
+						ecstatically, ecstatically,
+						existence is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
+					</h6>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="container-fluit endFooter p-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 pt-3">
+					Developed by <a href="#">Kodeberkah</a>
+				</div>
+				<div class="col-md-6 pt-3 text-center">
+					<div class="d-inline">
+						<div class="iconSocial">
+							<i class="fab fa-instagram"></i>
+						</div>
+						<div class="iconSocial">
+							<i class="fab fa-facebook"></i>
+						</div>
+						<div class="iconSocial">
+							<i class="fab fa-whatsapp"></i>
+						</div>
+						<div class="iconSocial">
+							<i class="fab fa-github"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$('.projectToggle').click(function () {
+			$('.projectCard').show(200);
+			$('.productCard').hide(200);
+			$('.projectToggle').addClass('text-primary font-weight-bold')
+			$('.productToggle').removeClass('text-primary font-weight-bold')
+			$('.allToggle').removeClass('text-primary font-weight-bold')
+		});
+		$('.productToggle').click(function () {
+			$('.projectCard').hide(200);
+			$('.productCard').show(200);
+			$('.projectToggle').removeClass('text-primary font-weight-bold')
+			$('.productToggle').addClass('text-primary font-weight-bold')
+			$('.allToggle').removeClass('text-primary font-weight-bold')
+		});
+		$('.allToggle').click(function () {
+			$('.projectCard').show(200);
+			$('.productCard').show(200);
+			$('.projectToggle').removeClass('text-primary font-weight-bold')
+			$('.productToggle').removeClass('text-primary font-weight-bold')
+			$('.allToggle').addClass('text-primary font-weight-bold')
+		});
+		var shopTitle = $('.shopTitle'),
+			shopCategory = $('.shopCategory'),
+			shopImage = $('.shopImage'),
+			shopPrice = $('.shopPrice');
+		$('.shopBody').click(function () {
+			var myTitle = $(this).find(shopTitle).text(),
+				myCategory = $(this).find(shopCategory).text(),
+				myPrice = $(this).find(shopPrice).text();
+			// myImage = $(this).find(shopImage).attr('src').toString();
+			localStorage.setItem('shopTitle', myTitle);
+			localStorage.setItem('shopCategory', myCategory);
+			localStorage.setItem('shopPrice', myPrice);
+			// localStorage.setItem('shopImage', myImage);
+			window.location.href = 'detailshop.html';
+		});
+
+		function search() {
+			var input = document.getElementById('myForumSearch'),
+				filter = input.value.toUpperCase(),
+				myType = document.getElementsByClassName('myForumType'),
+				myForums = document.getElementsByClassName('myForums'),
+				myForum = document.getElementsByClassName('myForum'),
+				myHeaderForum, myTypeForum, i, txtValue;
+			for (i = 0; i < myForum.length; i++) {
+				myHeaderForum = myForum[i].getElementsByClassName('myForumHeader')[0];
+				myTypeForum = myForum[i].getElementsByClassName('myForumType')[0];
+				txtValue = myHeaderForum.textContent ||
+					myHeaderForum.innerText || myTypeForum.textContent || myTypeForum.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					myForum[i].style.display = "";
+				} else {
+					myForum[i].style.display = "none";
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+.navbar-brand-admin {
+    background-image: linear-gradient(to right, #56bcd6, #56bcd6, #176395);
+    z-index: 100;
+}
+.navbar-brand-admin1 {
+    border-left: 2px solid #1b6292;
+    background-color: #56bcd6;
+    z-index: 100;
+}
+.menu-admin {
+    background-color: #56bcd6;
+    left: 0;
+    z-index: 0;
+    width: 25%;
+}
+.menu-admin ul {
+    list-style: none;
+}
+.menu-admin ul li {
+    font-size: 1.2rem;
+}
+
+.menu-admin ul li svg {
+    font-size: 1.1rem;
+}

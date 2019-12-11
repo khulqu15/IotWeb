@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iotonomous - Signin</title>
+
+    <link rel="shortcut icon" href="../img/content/favicon.png" type="image/x-icon" />
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/all.min.css" />
+	<link rel="stylesheet" href="../css/aos.css" />
+	<link rel="stylesheet" href="../css/fontawesome.min.css" />
+	<link rel="stylesheet" href="../css/slick-theme.css" />
+	<link rel="stylesheet" href="../css/slick.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/all.min.js"></script>
+	<script src="../js/aos.js"></script>
+	<script src="../js/slick.min.js"></script>
+	<script src="../js/typeit.min.js"></script>
+	<script src="../js/script.js"></script>
+    <script src="../js/Chart.js"></script>
+    
+</head>
+<body>
+
+        <header>
+                <nav>
+                    <div id="brand-nav">
+                        <div onclick="document.location.href='index.html'" class="pt-1">
+                            <img src="../img/content/favicon.png" width="40px" alt="" />
+                            <p style="font-size: 19px;" class="ml-2 text-dark">Iotonomous</p>
+                        </div>
+                    </div>
+                    <!-- 1e6795 Tua -->
+                    <!-- 8bccf6 Muda -->
+                    <div id="menu-nav">
+                        <ul style="list-style: none;" id="ul-menu">
+                            <li class="myMenu"><a class="text-dark" href="../../index.html">HOME</a></li>
+                            <li class="myMenu">
+                                <a class="text-dark" href="../page/learn.html">LEARN</a>
+                            </li>
+                            <li class="myMenu"><a class="text-dark" href="forum.html">FORUMS</a></li>
+                            <li class="myMenu"><a href="shop.html" class="active-nav">SHOP</a></li>
+                            <li class="myMenu"><a class="text-dark" href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
+                    
+                            <li id="settingsClose" style="display: none;">
+                                <i class="fas fa-times"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <script>
+                        $("#search-nav").on("click", function () {
+                            if (this.hash !== "") {
+                                event.preventDefault();
+                                var hash = this.hash;
+                                $("html, body").animate({
+                                        scrollTop: $(hash).offset().top
+                                    },
+                                    1000,
+                                    function () {
+                                        window.location.hash = hash;
+                                    }
+                                );
+                            }
+                            $("#input-search").focus();
+                        });
+                    </script>
+                    <div id="menu-toggle">
+                        <div class="line bg-dark" style="background-color: black !important;"></div>
+                        <div class="line bg-dark" style="background-color: black !important;"></div>
+                        <div class="line bg-dark" style="background-color: black !important;"></div>
+                        <!-- <i class="fas fa-stream"></i> -->
+                    </div>
+                    <div id="menu-close">
+                        <div class="line bg-dark" style="background-color: black !important;"></div>
+                        <div class="line bg-dark" style="background-color: black !important;"></div>
+                        <!-- <i class="fas fa-times"></i> -->
+                    </div>
+                </nav>
+            </header>
+            
+    
+    <div class="container my-5">
+        <div class="row px-0 mx-0 py-5">
+            <div class="col-lg-6 mx-0 px-5 bg-primary rounded-left shadow py-5">
+                <div class="pt-5 mt-5">
+                    <p class="px-4 py-5 my-5 text-white font-weight-bold">The best way to shop with Adafruit is to create an account which allows you to shop faster, track the status of your current orders, review your previous orders and take advantage of our other member benefits.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 mx-0 px-5 shadow rounded-right pt-5 pb-4">
+                <div class="pt-4 px-5">
+                    <h4 class="mb-3">Register</h4>
+                    <form action="login.html" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input required type="text" maxlength="10" minlength="4" max="10" min="4" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+                            <small style="color: gray;">Type Max 10 And Min 4</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input required type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input required type="text" maxlength="6" min="4" max="6" min="4" class="form-control" id="username" name="username" placeholder="Enter Username">
+                            <small style="color: gray;">Type Max 6 And Min 4</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input required type="password" class="form-control" id="password" name="password" placeholder="Enter Your Password">
+                        </div>
+                        <button type="submit" class="btn btn-register btn-primary px-4 d-inline w-100">Register</button>
+                    </form>
+                        <hr>
+                        <div class="text-center mb-0">
+                            <span>Sudah mempunyai akun <button class="btn btn-light px-4 mx-2" onclick="window.location.href='login.html'">Login</button></span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.btn-register').click(function () {
+            let name = $('#name').val(),
+                email = $('#email').val(),
+                username = $('#username').val(),
+                password = $('#password').val();
+
+                localStorage.setItem('myNameUser', name);
+                localStorage.setItem('myEmailUser', email);
+                localStorage.setItem('myUsernameUser', username);
+                localStorage.setItem('myPasswordUser', password);
+
+                console.log(name + ", " + email + ", " + username + ", " + password); 
+        });
+    </script>
+</body>
+</html>

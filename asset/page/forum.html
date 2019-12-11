@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Iotonomous Forum Discuss</title>
+
+	<link rel="shortcut icon" href="../img/content/favicon.png" type="image/x-icon" />
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/all.min.css" />
+	<link rel="stylesheet" href="../css/aos.css" />
+	<link rel="stylesheet" href="../css/fontawesome.min.css" />
+	<link rel="stylesheet" href="../css/slick-theme.css" />
+	<link rel="stylesheet" href="../css/slick.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/all.min.js"></script>
+	<script src="../js/aos.js"></script>
+	<script src="../js/slick.min.js"></script>
+	<script src="../js/typeit.min.js"></script>
+	<script src="../js/script.js"></script>
+	<script src="../js/Chart.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div id="brand-nav">
+				<div onclick="document.location.href='index.html'" class="pt-1">
+					<img src="../img/content/favicon.png" width="40px" alt="" />
+					<p style="font-size: 19px;" class="mmyForumParaphl-2">Iotonomous</p>
+				</div>
+			</div>
+			<!-- 1e6795 Tua -->
+			<!-- 8bccf6 Muda -->
+			<div id="menu-nav">
+				<ul style="list-style: none;" id="ul-menu">
+					<li class="myMenu"><a href="../../index.html">HOME</a></li>
+					<li class="myMenu">
+						<a href="../page/learn.html">LEARN</a>
+					</li>
+					<li class="myMenu"><a class="active-nav" href="forum.html">FORUMS</a></li>
+					<li class="myMenu"><a href="shop.html">SHOP</a></li>
+					<li class="myMenu"><a href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
+					<li id="settingsNav">
+						<button class="btn btn-primary d-inline-block btn-sm px-4 position-relative" style="top: -5px;" onclick="window.location.href='../page/login.html'">
+							Signin
+						</button>
+					</li>
+					<li id="settingsClose" style="display: none;">
+						<i class="fas fa-times"></i>
+					</li>
+				</ul>
+			</div>
+			<script>
+				$("#search-nav").on("click", function () {
+					if (this.hash !== "") {
+						event.preventDefault();
+						var hash = this.hash;
+						$("html, body").animate({
+								scrollTop: $(hash).offset().top
+							},
+							1000,
+							function () {
+								window.location.hash = hash;
+							}
+						);
+					}
+					$("#input-search").focus();
+				});
+			</script>
+			<div id="menu-toggle">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<!-- <i class="fas fa-stream"></i> -->
+			</div>
+			<div id="menu-close">
+				<div class="line"></div>
+				<div class="line"></div>
+				<!-- <i class="fas fa-times"></i> -->
+			</div>
+		</nav>
+	</header>
+
+	<div class="container-fluit parallax py-5">
+		<div class="row pt-5">
+			<div class="col-md-5 offset-md-1 py-5">
+				<div class="px-3 text-white">
+					<h3>
+						Iotonomous Customer Support Forums
+					</h3>
+					<p>Thanks for stopping by! These forums are for Adafruit customers who need assistance with their
+						purchases from Iotonomous
+						Industries. Our staff can only assist Adafruit customers, thank you!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluit pt-2 pb-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="position-sticky" style="top: 100px;">
+						<div class="text-center my-4">
+							<button class="btn btn-primary rounded-pill px-5 py-2 shadow font-weight-bold">New
+								Forums</button>
+							<div class="text-left mx-4 mt-4 myForumMenu">
+								<p class="my-3">
+									<span class="text-primary font-weight-bold allForums">
+										<i class="mx-3 fas fa-book"></i> All Threads
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal popularForums">
+										<i class="mx-3 fas fa-star"></i> Popular
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal solvedForums">
+										<i class="mx-3 fas fa-check-circle"></i> Solved
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal unsolvedForums">
+										<i class="mx-3 fas fa-times-circle"></i> Unsolved
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal no-repliedForums">
+										<i class="mx-3 fas fa-reply"></i> No Replies yet
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal leaderBoardForums">
+										<i class="mx-3 fas fa-clipboard"></i> Leaderboard
+									</span>
+								</p>
+	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-9 myForums">
+					<div class="row">
+						<div class="col-md-7">
+							<div class="text-center">
+								<div class="dropdown d-inline">
+									<button class="btn btn-light dropdown-toggle px-4 rounded-pill py-2 my-4"
+										type="button" id="dropdownKapan" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">Filter</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownKapan">
+										<a class="dropdown-item allForums">Latest</a>
+										<a class="dropdown-item popularForums">Popular</a>
+										<a class="dropdown-item solvedForums">Solved</a>
+										<a class="dropdown-item unsolvedForums">Unsolved</a>
+										<a class="dropdown-item no-repliedForums">No Replies yet</a>
+									</div>
+								</div>
+								<div class="dropdown d-inline">
+									<button class="btn btn-light dropdown-toggle px-4 mx-3 rounded-pill py-2 my-4"
+										type="button" id="dropdownKapan" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">Category</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownKapan">
+										<a class="dropdown-item arduinoForums">Arduino</a>
+										<a class="dropdown-item iotonomousForums">Iotonomous</a>
+										<a class="dropdown-item pythonForums">Python</a>
+										<a class="dropdown-item raspberryForums">Raspberry</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script>
+							$('.pythonForums').click(function () {
+								$('.arduino, .raspberry, .iotonomous').addClass('d-none', 500)
+								$('.python').removeClass('d-none', 500)
+							})
+							$('.arduinoForums').click(function () {
+								$('.python, .raspberry, .iotonomous').addClass('d-none', 500)
+								$('.arduino').removeClass('d-none', 500)
+							})
+							$('.raspberryForums').click(function () {
+								$('.python, .arduino, .iotonomous').addClass('d-none', 500)
+								$('.raspberry').removeClass('d-none', 500)
+							})
+							$('.iotonomousForums').click(function () {
+								$('.python, .raspberry, .arduino').addClass('d-none', 500)
+								$('.iotonomous').removeClass('d-none', 500)
+							})
+						</script>
+						<script>
+							$('.allForums').click(function () {
+								$('.replied, .unsolved, .solved, .no-replied').removeClass('d-none', 500)
+								$('.leaderBoardContent').addClass('d-none', 500);
+								$('.allForums').addClass('text-primary font-weight-bold')
+								$('.solvedForums, .popularForums, .unsolvedForums, .no-repliedForums, .leaderBoardForums')
+									.removeClass(
+										'text-primary font-weight-bold')
+								$('.popularForums').removeClass('text-primary font-weight-bold')
+							})
+							$('.popularForums').click(function () {
+								$('.no-replied, .leaderBoardContent').addClass('d-none', 500)
+								$('.replied').removeClass('d-none', 500)
+								$('.popularForums').addClass('text-primary font-weight-bold')
+								$('.solvedForums, .allForums, .unsolvedForums, .no-repliedForums, .leaderBoardForums').removeClass(
+									'text-primary font-weight-bold')
+							})
+							$('.solvedForums').click(function () {
+								$('.solved').removeClass('d-none', 500)
+								$('.unsolved, .leaderBoardContent').addClass('d-none', 500)
+								$('.popularForums, .allForums, .unsolvedForums, .no-repliedForums, .leaderBoardForums').removeClass(
+									'text-primary font-weight-bold')
+								$('.solvedForums').addClass('text-primary font-weight-bold')
+							})
+							$('.unsolvedForums').click(function () {
+								$('.solved, .leaderBoardContent').addClass('d-none', 500)
+								$('.unsolved').removeClass('d-none', 500)
+								$('.popularForums, .allForums, .solvedForums, .no-repliedForums, .leaderBoardForums').removeClass(
+									'text-primary font-weight-bold')
+								$('.unsolvedForums').addClass('text-primary font-weight-bold')
+							})
+							$('.no-repliedForums').click(function () {
+								$('.no-replied').removeClass('d-none', 500)
+								$('.replied, .leaderBoardContent').addClass('d-none', 500)
+								$('.no-repliedForums').addClass('text-primary font-weight-bold')
+								$('.solvedForums, .allForums, .unsolvedForums, .popularForums, .repliedForums, .leaderBoardForums')
+									.removeClass(
+										'text-primary font-weight-bold')
+							})
+						</script>
+						<div class="col-md-5">
+							<div class="d-flex">
+								<button class="btn btn-light mx-2 my-4 rounded showParaph active">
+									<i class="fas fa-bars"></i>
+								</button>
+								<button class="btn btn-light mx-2 my-4 rounded hideParaph">
+									<i class="fas fa-grip-lines"></i>
+								</button>
+								<div class="input-group my-4 mx-2">
+									<input type="text" class="bg-light form-control" id="myForumSearch"
+										onkeyup="search()" placeholder="Look for somethings..." aria-label="Search">
+									<div class="input-group-append">
+										<button class="btn btn-outline-secondary" type="button" id="button-addon">
+											<i class="fas fa-search"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script>
+						function search() {
+							var input = document.getElementById('myForumSearch'),
+								filter = input.value.toUpperCase(),
+								myType = document.getElementsByClassName('myForumType'),
+								myForums = document.getElementsByClassName('myForums'),
+								myForum = document.getElementsByClassName('myForum'),
+								myHeaderForum, myTypeForum, i, txtValue;
+							for (i = 0; i < myForum.length; i++) {
+								myHeaderForum = myForum[i].getElementsByClassName('myForumHeader')[0];
+								myTypeForum = myForum[i].getElementsByClassName('myForumType')[0];
+								txtValue = myHeaderForum.textContent || myHeaderForum.innerText || myTypeForum.textContent ||
+									myTypeForum.innerText;
+								if (txtValue.toUpperCase().indexOf(filter) > -1) {
+									myForum[i].style.display = "";
+									$('#notFoundForum').addClass('d-none');
+								} else {
+									myForum[i].style.display = "none";
+									$('#notFoundForum').addClass('d-none');
+								}
+								if (myForum) {
+									$('#notFoundForum').removeClass('d-none');
+								}
+							}
+						}
+						$('.showParaph').click(function () {
+							$('.myForumParaph').show(500)
+							$('.showParaph').addClass('active')
+							$('.hideParaph').removeClass('active')
+						})
+						$('.hideParaph').click(function () {
+							$('.myForumParaph').hide(500)
+							$('.showParaph').removeClass('active')
+							$('.hideParaph').addClass('active')
+						})
+					</script>
+					<div id="1" class="myForum position-relative rounded-lg my-2 px-2 pt-3 pb-1 solved replied python">
+						<div class="text-center d-flex px-3 myIconForum">
+							<div class="iconForum position-relative my-2 d-inline-block rounded-circle overflow-hidden">
+								<div class="myForumSolved">
+									<i class="fas fa-check"></i>
+								</div>
+								<img src="../img/user/user.jpg" class="h-100 myUserImage" alt="">
+							</div>
+							<script>
+
+							</script>
+							<h6 class="name text-primary py-4 mx-3">Khusnul Khuluq</h6>
+						</div>
+						<div class="pt-2 pb-3 px-3 myForum-title d-inline-block">
+							<h5 class="mb-0 pb-0 myForumHeader">OpenCV Library Not Found, in pycharm Python</h5>
+							<p style="font-size: 0.8rem" class="myForumParaph p-0 m-0 myForum-description">how to solve
+								the OpenCV
+								Library Not Found problem...</p>
+							<p class="p-0 m-0">
+								<span
+									class="badge p-0 m-0 font-weight-bold myReplied text-primary">maftuhANaufal@gmail.com</span>
+								<span class="badge p-0 m-0 font-weight-normal text-dark">Replied</span>
+								<span class="badge p-0 m-0 text-info">3 hours ago</span>
+							</p>
+						</div>
+						<div class="position-absolute myForum-info">
+							<p class="mx-2" style="font-size: 0.8rem !important;">
+								<span>
+									<i class="fas fa-eye mx-2"></i><span class="myViewers">1</span>
+								</span>
+								<span class="comment">
+									<i class="fas fa-comment mx-2"></i><span class="myComments">1</span>
+								</span>
+								<span
+									class="border myForumType border-primary px-3 py-1 mx-1 text-primary rounded-pill">Python</span>
+								</span>
+							</p>
+						</div>
+					</div>
+					<div id="2"
+						class="myForum position-relative rounded-lg my-2 px-2 pt-3 pb-1 replied unsolved arduino">
+						<div class="text-center d-flex h-auto px-3 myIconForum">
+							<div
+								class="iconForum position-relative my-2 align-middle d-inline-block rounded-circle overflow-hidden">
+								<img src="../img/user/icon.png" class="h-100 myUserImage" alt="">
+							</div>
+							<h6 class="name text-primary pt-4 mx-3">Febri Brilian</h6>
+						</div>
+						<div class="pt-2 pb-3 px-3 myForum-title d-inline-block">
+							<h5 class="mb-0 pb-0 myForumHeader">Port arduino doesn't exist, How to installed that</h5>
+							<p style="font-size: 0.8rem" class="myForumParaph p-0 m-0 myForum-description">how to solve
+								the Port
+								arduino doesn't exist problem...</p>
+							<p class="p-0 m-0">
+								<span
+									class="badge p-0 m-0 font-weight-bold myReplied text-primary">madamarshanda@gmail.com</span>
+								<span class="badge p-0 m-0 font-weight-normal text-dark">Replied</span>
+								<span class="badge p-0 m-0 text-info">3 hours ago</span>
+							</p>
+						</div>
+						<div class="position-absolute myForum-info">
+							<p class="mx-2" style="font-size: 0.8rem !important;">
+								<span>
+									<i class="fas fa-eye mx-2"></i><span class="myViewers">1</span>
+								</span>
+								<span class="comment">
+									<i class="fas fa-comment mx-2"></i><span class="myComments">1</span>
+								</span>
+								<span
+									class="border myForumType border-info px-3 py-1 mx-1 text-primary rounded-pill">Arduino</span>
+								</span>
+							</p>
+						</div>
+					</div>
+					<div id="3"
+						class="myForum position-relative rounded-lg my-2 px-2 pt-3 pb-1 solved replied raspberry">
+						<div class="text-center d-flex h-auto px-3 myIconForum">
+							<div
+								class="iconForum position-relative my-2 align-middle d-inline-block rounded-circle overflow-hidden">
+								<div class="myForumSolved">
+									<i class="fas fa-check"></i>
+								</div>
+								<img src="../img/user/iconn.jpg" class="h-100 myUserImage" alt="">
+							</div>
+							<h6 class="name text-primary pt-4 mx-3">Maftuh Ahmad Naufal</h6>
+						</div>
+						<div class="pt-2 pb-3 px-3 myForum-title d-inline-block">
+							<h5 class="mb-0 pb-0 myForumHeader">Raspberry PI not displayed OS Linux</h5>
+							<p style="font-size: 0.8rem" class="myForumParaph p-0 m-0 myForum-description">how to solve
+								the Raspberry
+								PI not displayed OS Linux problem...</p>
+							<p class="p-0 m-0">
+								<span
+									class="badge p-0 m-0 font-weight-bold myReplied text-primary">khusnul20032002@gmail.com</span>
+								<span class="badge p-0 m-0 font-weight-normal text-dark">Replied</span>
+								<span class="badge p-0 m-0 text-info">3 hours ago</span>
+							</p>
+						</div>
+						<div class="position-absolute myForum-info">
+							<p class="mx-2" style="font-size: 0.8rem !important;">
+								<span>
+									<i class="fas fa-eye mx-2"></i><span class="myViewers">1</span>
+								</span>
+								<span class="comment">
+									<i class="fas fa-comment mx-2"></i><span class="myComments">1</span>
+								</span>
+								<span
+									class="border myForumType border-danger px-3 py-1 mx-1 text-danger rounded-pill">Raspberry</span>
+								</span>
+							</p>
+						</div>
+					</div>
+					<div id="4"
+						class="myForum position-relative rounded-lg my-2 px-2 pt-3 pb-1 no-replied unsolved iotonomous">
+						<div class="text-center d-flex h-auto px-3 myIconForum">
+							<div
+								class="iconForum position-relative my-2 align-middle d-inline-block rounded-circle overflow-hidden">
+								<img src="../img/user/icons.jpg" class="h-100 myUserImage" alt="">
+							</div>
+							<h6 class="name text-primary pt-4 mx-3">Ade Mada Marsha</h6>
+						</div>
+						<div class="pt-2 pb-3 px-3 myForum-title d-inline-block">
+							<h5 class="mb-0 pb-0 myForumHeader">How to connect API Iotonomous to my project</h5>
+							<p style="font-size: 0.8rem" class="myForumParaph p-0 m-0 myForum-description">how to solve
+								the connect
+								API Iotonomous to my project problem...</p>
+						</div>
+						<div class="position-absolute myForum-info">
+							<p class="mx-2" style="font-size: 0.8rem !important;">
+								<span>
+									<i class="fas fa-eye mx-2"></i><span class="myViewers">1</span>
+								</span>
+								<span class="comment">
+									<i class="fas fa-comment mx-2"></i><span class="myComments">1</span>
+								</span>
+								<span
+									class="border myForumType border-primary px-3 py-1 mx-1 text-primary rounded-pill">Iotonomous</span>
+								</span>
+							</p>
+						</div>
+					</div>
+					<div id="notFoundForum" class="d-none">
+						<div class="badge-danger p-2 text-center rounded-lg">Opps... Forum not found</div>
+					</div>
+					<script>
+						var header = $('.myForumHeader'),
+							paraph = $('.myForum-description'),
+							author = $('.name'),
+							image = $('.myUserImage'),
+							type = $('.myForumType'),
+							viewers = $('.myViewers'),
+							comments = $('.myComments'),
+							repliedBy = $('.myReplied');
+						$('.myForum').click(function () {
+							var myHeader = $(this).find(header).text(),
+								myParaph = $(this).find(paraph).text(),
+								myAuthor = $(this).find(author).text(),
+								myType = $(this).find(type).text(),
+								myImage = $(this).find(image).attr('src').toString(),
+								myViewers = $(this).find(viewers).text(),
+								myComments = $(this).find(comments).text(),
+								myReplied = $(this).find(repliedBy).text();
+							localStorage.setItem('header', myHeader);
+							localStorage.setItem('paraph', myParaph);
+							localStorage.setItem('author', myAuthor);
+							localStorage.setItem('type', myType);
+							localStorage.setItem('viewers', myViewers);
+							localStorage.setItem('comments', myComments);
+							localStorage.setItem('userImage', myImage);
+							localStorage.setItem('repliedBy', myReplied);
+							window.location.href = 'detailforum.html'
+						})
+					</script>
+					<div class="leaderBoardContent d-none">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="leaderBoard border px-3 py-4 my-2 rounded-sm">
+									<div class="d-flex">
+										<div
+											class="iconForum position-relative my-2 align-middle d-inline-block rounded-circle overflow-hidden">
+											<img src="../img/user/user.jpg" class="h-100 myUserImage" alt="">
+										</div>
+										<div class="leaderBoardText ml-3 mt-2">
+											<h6 class="text-primary">Khusnul Khuluq</h6>
+											<p class="pb-0 mb-0" style="font-size: .8rem;"><b>100.200 </b>Best Reply
+												Award</p>
+											<p class="pb-0 mb-0" style="font-size: .8rem;"><b>50.400 </b>Experience</p>
+										</div>
+									</div>
+									<h1 class="position-absolute text-primary" style="top: 40px; right: 50px;">1</h1>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="leaderBoard border px-3 py-4 my-2 rounded-sm">
+									<div class="d-flex">
+										<div
+											class="iconForum position-relative my-2 align-middle d-inline-block rounded-circle overflow-hidden">
+											<img src="../img/user/icon.png" class="h-100 myUserImage" alt="">
+										</div>
+										<div class="leaderBoardText ml-3 mt-2">
+											<h6 class="text-primary">Febri Brilian</h6>
+											<p class="pb-0 mb-0" style="font-size: .8rem;"><b>96.500 </b>Best Reply
+												Award</p>
+											<p class="pb-0 mb-0" style="font-size: .8rem;"><b>32.700 </b>Experience</p>
+										</div>
+									</div>
+									<h1 class="position-absolute text-primary" style="top: 40px; right: 50px;">2</h1>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="leaderBoard border px-3 py-4 my-2 rounded-sm">
+									<div class="d-flex">
+										<div
+											class="iconForum position-relative my-2 align-middle d-inline-block rounded-circle overflow-hidden">
+											<img src="../img/user/iconn.jpg" class="h-100 myUserImage" alt="">
+										</div>
+										<div class="leaderBoardText ml-3 mt-2">
+											<h6 class="text-primary">Maftuh Ahmad Naufal</h6>
+											<p class="pb-0 mb-0" style="font-size: .8rem;"><b>90.200 </b>Best Reply
+												Award</p>
+											<p class="pb-0 mb-0" style="font-size: .8rem;"><b>30.750 </b>Experience</p>
+										</div>
+									</div>
+									<h1 class="position-absolute text-primary" style="top: 40px; right: 50px;">3</h1>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="leaderBoard border px-3 py-4 my-2 rounded-sm">
+									<div class="d-flex">
+										<div
+											class="iconForum position-relative my-2 align-middle d-inline-block rounded-circle overflow-hidden">
+											<img src="../img/user/icons.jpg" class="h-100 myUserImage" alt="">
+										</div>
+										<div class="leaderBoardText ml-3 mt-2">
+											<h6 class="text-primary">Ade Mada Marshanda</h6>
+											<p class="pb-0 mb-0" style="font-size: .8rem;"><b>87.890 </b>Best Reply
+												Award</p>
+											<p class="pb-0 mb-0" style="font-size: .8rem;"><b>27.870 </b>Experience</p>
+										</div>
+									</div>
+									<h1 class="position-absolute text-dark" style="top: 40px; right: 50px;">4</h1>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$('.leaderBoardForums').click(function () {
+			$('.leaderBoardContent').removeClass('d-none', 500)
+			$('.myForum').addClass('d-none', 500)
+			$('.leaderBoardForums').addClass('text-primary font-weight-bold')
+			$('.solvedForums, .allForums, .unsolvedForums, .repliedForums, .no-repliedForums').removeClass(
+				'text-primary font-weight-bold')
+		})
+	</script>
+
+	<footer class="container-fluit footer py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 my-4">
+					<div class="d-flex mb-2">
+						<img src="../img/content/favicon.png" class="footerIcon" width="43px" alt="">
+						<h3 class="ml-4">Iotonomous</h3>
+					</div>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem esse ullam quia illo labore
+						perspiciatis pariatur blanditiis laboriosam similique cum, laborum aperiam nihil amet itaque.
+					</p>
+					<div class="grWhite"> </div>
+					<div>
+						<p>
+							<i class="fas fa-envelope mr-3"></i> khusnul20032002@gmail.com
+						</p>
+					</div>
+					<div class="grWhite"></div>
+					<div>
+						<p>
+							<i class="fas fa-phone mr-3"></i> (+62)882-1726-2025
+						</p>
+					</div>
+					<div class="grWhite"></div>
+					<div>
+						<p>
+							<i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan, EastJava
+						</p>
+					</div>
+					<div class="grWhite"></div>
+				</div>
+				<div class="col-md-3 my-4">
+					<h5 class="mb-4">Useful Links</h5>
+					<div class="row">
+						<div class="col-8 link">
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Quick Guides</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Terms of Service</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Privacy Policy</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Send Feedback</a></p>
+						</div>
+						<div class="col-4 link">
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">News</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 my-4">
+					<h6>
+						"Propel, propel, propel your craft softly down liquid solution. Ecstatically, ecstatically,
+						ecstatically, ecstatically,
+						existence is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
+					</h6>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="container-fluit endFooter p-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 pt-3">
+					Developed by <a href="#">Kodeberkah</a>
+				</div>
+				<div class="col-md-6 pt-3 text-center">
+					<div class="d-inline">
+						<div class="iconSocial">
+							<i class="fab fa-instagram"></i>
+						</div>
+						<div class="iconSocial">
+							<i class="fab fa-facebook"></i>
+						</div>
+						<div class="iconSocial">
+							<i class="fab fa-whatsapp"></i>
+						</div>
+						<div class="iconSocial">
+							<i class="fab fa-github"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

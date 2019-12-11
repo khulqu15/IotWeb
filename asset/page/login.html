@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iotonomous - Signin</title>
+
+    <link rel="shortcut icon" href="../img/content/favicon.png" type="image/x-icon" />
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/all.min.css" />
+	<link rel="stylesheet" href="../css/aos.css" />
+	<link rel="stylesheet" href="../css/fontawesome.min.css" />
+	<link rel="stylesheet" href="../css/slick-theme.css" />
+	<link rel="stylesheet" href="../css/slick.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/all.min.js"></script>
+	<script src="../js/aos.js"></script>
+	<script src="../js/slick.min.js"></script>
+	<script src="../js/typeit.min.js"></script>
+	<script src="../js/script.js"></script>
+    <script src="../js/Chart.js"></script>
+    
+</head>
+<body>
+
+        <header>
+            <nav>
+                <div id="brand-nav">
+                    <div onclick="document.location.href='index.html'" class="pt-1">
+                        <img src="../img/content/favicon.png" width="40px" alt="" />
+                        <p style="font-size: 19px;" class="ml-2 text-dark">Iotonomous</p>
+                    </div>
+                </div>
+                <!-- 1e6795 Tua -->
+                <!-- 8bccf6 Muda -->
+                <div id="menu-nav">
+                    <ul style="list-style: none;" id="ul-menu">
+                        <li class="myMenu"><a class="text-dark" href="../../index.html">HOME</a></li>
+                        <li class="myMenu">
+                            <a class="text-dark" href="../page/learn.html">LEARN</a>
+                        </li>
+                        <li class="myMenu"><a class="text-dark" href="forum.html">FORUMS</a></li>
+                        <li class="myMenu"><a href="shop.html" class="active-nav">SHOP</a></li>
+                        <li class="myMenu"><a class="text-dark" href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
+                
+                        <li id="settingsClose" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    $("#search-nav").on("click", function () {
+                        if (this.hash !== "") {
+                            event.preventDefault();
+                            var hash = this.hash;
+                            $("html, body").animate({
+                                    scrollTop: $(hash).offset().top
+                                },
+                                1000,
+                                function () {
+                                    window.location.hash = hash;
+                                }
+                            );
+                        }
+                        $("#input-search").focus();
+                    });
+                </script>
+                <div id="menu-toggle">
+                    <div class="line bg-dark" style="background-color: black !important;"></div>
+                    <div class="line bg-dark" style="background-color: black !important;"></div>
+                    <div class="line bg-dark" style="background-color: black !important;"></div>
+                    <!-- <i class="fas fa-stream"></i> -->
+                </div>
+                <div id="menu-close">
+                    <div class="line bg-dark" style="background-color: black !important;"></div>
+                    <div class="line bg-dark" style="background-color: black !important;"></div>
+                    <!-- <i class="fas fa-times"></i> -->
+                </div>
+            </nav>
+        </header>
+        
+    
+    <div class="container my-5">
+        <div class="row px-0 mx-0 py-5">
+            <div class="col-lg-6 mx-0 px-5 bg-primary rounded-left shadow py-5">
+                <div class="py-5">
+                    <p class="px-4 py-5 my-5 text-white font-weight-bold">Your Iotonomous account grants you access to all of Adafruit, including the shop, learning system, and forums.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 mx-0 px-5 shadow rounded-right pt-5 pb-4">
+                <div class="pt-4 px-5">
+                    <h4>Login</h4>
+                    <div class="alert alert-danger myAlert d-none" role="alert"></div>
+    
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your Password">
+                        </div>
+                        <button class="btn btn-primary btn-login px-4 d-inline w-100">Login</button>
+    
+                    <hr>
+                    <div class="text-center mb-0">
+                        <span>Belum punya akun ? <button class="btn btn-light px-4 mx-2" onclick="window.location.href='register.html'">Register</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.btn-login').click(function () {
+            let email = $('#email').val();
+            let password = $('#password').val();
+            let emailUser = localStorage.getItem('myEmailUser');
+            let passwordUser = localStorage.getItem('myPasswordUser');
+
+            if( email === "" && password === "" ) {
+                $('.myAlert').removeClass('d-none');
+                $('.myAlert').text("Isikan Formulir dulu");
+            } else {
+                if(email === emailUser) {
+                    if(password === passwordUser) {
+                        window.location.href = '../admin/index.html'
+                    } else {
+                        $('.myAlert').removeClass('d-none');
+                        $('.myAlert').text("Email  / Password Salah");
+                    }
+                } else {
+                    $('.myAlert').removeClass('d-none');
+                    $('.myAlert').text("Email  / Password Salah");
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

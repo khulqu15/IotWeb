@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title></title>
+	<link rel="shortcut icon" href="../img/content/favicon.png" type="image/x-icon" />
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/all.min.css" />
+	<link rel="stylesheet" href="../css/aos.css" />
+	<link rel="stylesheet" href="../css/fontawesome.min.css" />
+	<link rel="stylesheet" href="../css/slick-theme.css" />
+	<link rel="stylesheet" href="../css/slick.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/all.min.js"></script>
+	<script src="../js/aos.js"></script>
+	<script src="../js/slick.min.js"></script>
+	<script src="../js/typeit.min.js"></script>
+	<script src="../js/script.js"></script>
+	<script src="../js/Chart.js"></script>
+</head>
+
+<body onload="getLocal()">
+	<header>
+		<nav>
+			<div id="brand-nav">
+				<div onclick="document.location.href='index.html'" class="pt-1">
+					<img src="../img/content/favicon.png" width="40px" alt="" />
+					<p style="font-size: 19px;" class="ml-2 text-dark">Iotonomous</p>
+				</div>
+			</div>
+			<!-- 1e6795 Tua -->
+			<!-- 8bccf6 Muda -->
+			<div id="menu-nav">
+				<ul style="list-style: none;" id="ul-menu">
+					<li class="myMenu"><a class="text-dark" href="../../index.html">HOME</a></li>
+					<li class="myMenu">
+						<a class="text-dark" href="../page/learn.html">LEARN</a>
+					</li>
+					<li class="myMenu"><a class="text-dark" href="forum.html">FORUMS</a></li>
+					<li class="myMenu"><a href="shop.html" class="active-nav">SHOP</a></li>
+					<li class="myMenu"><a class="text-dark" href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
+					<li id="settingsNav">
+						<button class="btn btn-primary d-inline-block btn-sm px-4 position-relative" style="top: -5px;" onclick="window.location.href='../page/login.html'">
+							Signin
+						</button>
+					</li>
+					<li id="settingsClose" style="display: none;">
+						<i class="fas fa-times"></i>
+					</li>
+				</ul>
+			</div>
+			<script>
+				$("#search-nav").on("click", function () {
+					if (this.hash !== "") {
+						event.preventDefault();
+						var hash = this.hash;
+						$("html, body").animate({
+								scrollTop: $(hash).offset().top
+							},
+							1000,
+							function () {
+								window.location.hash = hash;
+							}
+						);
+					}
+					$("#input-search").focus();
+				});
+			</script>
+			<div id="menu-toggle">
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<!-- <i class="fas fa-stream"></i> -->
+			</div>
+			<div id="menu-close">
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<!-- <i class="fas fa-times"></i> -->
+			</div>
+		</nav>
+	</header>
+
+	<div class="container my-5 py-3">
+		<div class="row my-5 py-5">
+
+			<div class="col-md-6">
+				<div class="rounded overflow-hidden my-5">
+					<img class="shopImage" data-target="#modal" data-toggle="modal" width="100%" alt="">
+				</div>
+				<div class="modal fade" tabindex="-1" id="modal">
+					<div class="modal-dialog modal-lg" role="img">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Image</h5>
+								<button type="button" class="close" aria-label="Close" data-dismiss="modal">
+									<span>&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<img class="shopImage w-100" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 rounded-lg shadow">
+				<div class="pt-4 px-3 pb-2">
+					<h4 class="shopTitle mb-4">This Lorem ipsum dolor sit amet. <span
+							class="badge badge-sm badge-primary">New</span>
+					</h4>
+					<p class="shopParaph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+						mollitia aliquid eveniet
+						vitae, perspiciatis necessitatibus. Lorem ipsum dolor sit, amet consectetur adipisicing
+						elit. Nobis, nesciunt!</p>
+					<p class="font-weight-bold p-1 m-0" data-toggle="tooltip" data-placement="left" title="Alamat"><i
+							class="fas fa-map-marker-alt ml-1 mr-2"></i>
+						<span class="shopAddress ml-1" style="font-size: .85rem;">Purwosari,Pasuruan,Jawatimur</span>
+					</p>
+					<p class="font-weight-bold p-1 m-0" data-toggle="tooltip" data-placement="left"
+						title="Jam Pelayanan"><i class="fas fa-clock ml-1 mr-2"></i>
+						<span class="shopClock" style="font-size: .85rem;"">06:00 - 22:00</span>
+					</p>
+					<p class=" font-weight-bold p-1 m-0" data-toggle="tooltip" data-placement="left" title="Category">
+							<i class="fas fa-list-ul ml-1 mr-2"></i>
+							<span class="shopCategory">Project</span>
+					</p>
+					<div class="d-flex text-warning mt-3">
+						<i class="fas fa-star ml-1"></i>
+						<i class="fas fa-star ml-1"></i>
+						<i class="fas fa-star ml-1"></i>
+						<i class="fas fa-star ml-1"></i>
+						<i class="far fa-star ml-1"></i>
+					</div>
+					
+					<div class="d-flex mt-5 mb-3">
+						<form action="" method="GET">
+							<div class="input-group mx-2">
+								<input type="number" name="many" id="many" class="form-control bg-light border-0" placeholder="0" value="1"
+									max="100" min="1">
+								<div class="input-group-append">
+									<button type="submit" class="input-group-text mr-3 bg-warning border-0 text-dark shopPrice">Buy $10</button>
+								</div>
+							</div>	
+						</form>
+							<button class="d-inline btn btn-light mx-1 ml-2"><i class="fas fa-cart-plus"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$("#search-nav").on("click", function () {
+			if (this.hash !== "") {
+				event.preventDefault();
+				var hash = this.hash;
+				$("html, body").animate({
+						scrollTop: $(hash).offset().top
+					},
+					1000,
+					function () {
+						window.location.hash = hash;
+					}
+				);
+			}
+			$("#input-search").focus();
+		});
+	</script>
+	<div id="menu-toggle">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+		<!-- <i class="fas fa-stream"></i> -->
+	</div>
+	<div id="menu-close">
+		<div class="line"></div>
+		<div class="line"></div>
+		<!-- <i class="fas fa-times"></i> -->
+	</div>
+	</nav>
+	</header>
+
+	<script>
+		let ls = localStorage;
+		let shopTitle = localStorage.getItem('shopTitle');
+		let shopCategory = localStorage.getItem('shopCategory');
+		let shopPrice = localStorage.getItem('shopPrice');
+		let sensorGerak =
+			"Inilah Project yang digunakan untuk kebutuhan alat yang memiliki sensor gerak, seperti alat pendeteksi maling, alat ini terbuat dari Arduino, Sensor PIR / Sensor Gerak, Buzzer (Output)"
+		let implementasiSensor =
+			"Implementasi Sensor Kartu digunakan untuk merealisasikan sensor Kartu, umumnya sensor ini digunakan untuk sensor pada Pintu, Alat ini terbuat dari Arduino, Sensor Card, Buzzer (Output)"
+		let arduinoProduct = 
+			"Arduino Project AutoDoor adalah sebuah product untuk sistem pintu rumah otomatis dengan sensor wajah, maupun Control Smartphone, Sensor yang digunakan yakni OpenCV Python, dengan Indikator Kamera"
+		function getLocal() {
+			if (
+				ls.shopTitle === undefined ||
+				ls.shopCategory === undefined ||
+				ls.shopPrice === undefined
+			) {
+				window.location.href = "shop.html";
+				console.log("gaonok");
+			} else {
+				document.title = "Shop" + " | " + shopTitle;
+				$('.shopTitle').text(shopTitle);
+				if (ls.shopTitle === "Sensor Gerak Output LCD.New") {
+					$('.shopParaph').text(sensorGerak);
+					shopPrice = 10
+					$('.shopImage').attr('src', '../img/content/arduinoshop1.jpg');
+					// return shopPrice;
+				}
+				if (ls.shopTitle === "Implementasi Sensor Kartu.New") {
+					$('.shopParaph').text(implementasiSensor);
+					shopPrice = 14
+					$('.shopImage').attr('src', '../img/content/arduinoshop.jpg');
+					// return shopPrice;
+				}
+				if (ls.shopTitle === "Arduino Project AutoDoor.New") {
+					$('.shopParaph').text(arduinoProduct);
+					shopPrice = 50
+					$('.shopImage').attr('src', '../img/content/guide3.jpg');
+					// return shopPrice;
+				}
+				$('.shopPrice').text("Buy " + shopPrice);
+				$('.shopCategory').text(shopCategory);
+				$('.shopPrice').text("Buy $" + shopPrice);
+				$('#many').change(function() {
+					var many = $('#many').val();
+
+					var totalSelect;
+					totalSelect = parseInt(many) * parseInt(shopPrice);
+					// console.log(totalSelect);
+					$('.shopPrice').text("Buy $" + totalSelect);
+				});
+			}
+		}
+		// if (
+		// 	ls.shopPrice === undefined ||
+		// 	ls.shopPrice === undefined
+		// ) {
+		// 	window.location.href = "shop.html";
+		// 	console.log("gaonok");
+		// } else {
+		// 	document.title = "Shop" + " | " + theProblem;
+		// 	$('.myUserImage').attr('src', theImage);
+		// 	$('#myUserName').text(theAuthor);
+		// 	$('#myHeaderProblem').text(theProblem);
+		// 	$('.myViewers').text(theViewers);
+		// 	$('.myComments').text(theComments);
+		// 	$('#repliedBy').text(replied);
+		// 	if (replied === "madamarshanda@gmail.com") {
+		// 		$('.myUserReplied').attr('src', '../img/user/icons.jpg');
+		// 	}
+		// 	if (replied === "maftuhANaufal@gmail.com") {
+		// 		$('.myUserReplied').attr('src', '../img/user/iconn.jpg');
+		// 	}
+		// 	if (replied === "khusnul20032002@gmail.com") {
+		// 		$('.myUserReplied').attr('src', '../img/user/user.jpg');
+		// 	}
+		// 	$('.myForumType').text(theType);
+		// 	if ((theType === "Python") || (theType === "Iotonomous")) {
+		// 		$('#myTypeForum').addClass('text-primary border-primary')
+		// 	}
+		// 	if (theType === "Arduino") {
+		// 		$('#myTypeForum').addClass('text-info border-info')
+		// 	}
+		// 	if (theType === "Raspberry") {
+		// 		$('#myTypeForum').addClass('text-danger border-danger')
+		// 	}
+		// }
+		$('[data-toggle="tooltip"]').tooltip();
+	</script>
+</body>
+
+</html>

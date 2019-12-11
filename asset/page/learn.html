@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Iotonomous Learn</title>
+
+    <link
+      rel="shortcut icon"
+      href="../img/content/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/aos.css" />
+    <link rel="stylesheet" href="../css/fontawesome.min.css" />
+    <link rel="stylesheet" href="../css/slick-theme.css" />
+    <link rel="stylesheet" href="../css/slick.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/all.min.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/typeit.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/Chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="brand-nav">
+          <div onclick="document.location.href='index.html'" class="pt-1">
+            <img src="../img/content/favicon.png" width="40px" alt="" />
+            <p style="font-size: 19px;" class="ml-2">Iotonomous</p>
+          </div>
+        </div>
+        <!-- 1e6795 Tua -->
+        <!-- 8bccf6 Muda -->
+        <div id="menu-nav">
+          <ul style="list-style: none;" id="ul-menu">
+            <li class="myMenu"><a href="../../index.html">HOME</a></li>
+            <li class="myMenu">
+              <a class="active-nav" href="../page/learn.html">LEARN</a>
+            </li>
+            <li class="myMenu"><a href="forum.html">FORUMS</a></li>
+            <li class="myMenu"><a href="shop.html">SHOP</a></li>
+            <li class="myMenu"><a href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
+            <li id="settingsNav">
+              <button
+                class="btn btn-primary d-inline-block btn-sm px-4 position-relative"
+                style="top: -5px;"
+                onclick="window.location.href='../page/login.html'"
+              >
+                Signin
+              </button>
+            </li>
+            <li id="settingsClose" style="display: none;">
+              <i class="fas fa-times"></i>
+            </li>
+          </ul>
+        </div>
+        <script>
+          $("#search-nav").on("click", function() {
+            if (this.hash !== "") {
+              event.preventDefault();
+              var hash = this.hash;
+              $("html, body").animate(
+                {
+                  scrollTop: $(hash).offset().top
+                },
+                1000,
+                function() {
+                  window.location.hash = hash;
+                }
+              );
+            }
+            $("#input-search").focus();
+          });
+        </script>
+        <div id="menu-toggle">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <!-- <i class="fas fa-stream"></i> -->
+        </div>
+        <div id="menu-close">
+          <div class="line"></div>
+          <div class="line"></div>
+          <!-- <i class="fas fa-times"></i> -->
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluit parallax py-5">
+      <div class="row pt-5">
+        <div class="col-md-5 offset-md-1 py-5">
+          <div class="px-3 text-white">
+            <h5>
+              Learn how to make the world progress to industry 4.0 by making the
+              Internet of Thing with us
+            </h5>
+            <p>~ Iotonomous ~</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluit">
+      <!-- <div class="row">
+        <div class="col-md-12 ml-4 mt-4">
+          <h1>Iotonomous</h1>
+          <p>3 Guides</p>
+        </div>
+      </div> -->
+      <div class="row mt-4">
+        <div class="col-lg-3 my-3 pl-5 learnFilter">
+          <div class="position-sticky" style="top: 100px;">
+              <h3 class="px-3 mb-4">Filter</h3>
+              <div class="btn-group mx-2 rounded-pill shadow" role="group" aria-label="Choose">
+                <button style="font-size: .84rem;" class="btn btn-primary active px-4">Explore & Learn</button>
+                <button style="font-size: .84rem;" class="btn btn-primary px-4">New Guides</button>
+              </div>
+              <div class="mx-2">
+                <div class="input-group mt-4 mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="searching"
+                    aria-describedby="searching"
+                    placeholder="Look for something.."
+                  />
+                </div>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-primary w-100 dropdown-toggle my-1"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Choose Level
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" style="cursor: pointer;">Beginner</a>
+                    <a class="dropdown-item" style="cursor: pointer;">Intermediate</a>
+                    <a class="dropdown-item" style="cursor: pointer;">Advanced</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-9 my-3">
+          <h3 class="px-3">The Latest</h3>
+          <div class="row px-3">
+            <div class="col-md-4 my-3">
+              <div class="learnCard position-relative">
+                <div class="mx-auto myFitur d-inline">
+                    <div class="d-inline w-100 position-absolute learnFitur">
+                      <div class="learnIcons d-inline-block learnIconHeart"><i class="far fa-heart"></i></div>
+                      <div class="learnIcons d-inline-block learnIconShare"><i class="fas fa-share"></i></div>
+                      <div class="learnIcons d-inline-block learnIconEye"><i class="fas fa-eye"></i></div>
+                    </div>
+                </div>
+                <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Intermediate</div>
+                <div class="position-absolute w-100 px-2 learnBody" id="learnBody1">
+                  <div class="row">
+                    <div class="col-12 myLearn">
+                        <h5 class="learnTitle">Impelemntasi Raspberry pada Arduino</h5>
+                        <p style="font-size: .8rem;" class="learnDescription">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, consequatur.</p>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  id="learnImg1"
+                  class="learnImg h-100"
+                  src="../img/content/shop1.jpg"
+                />
+              
+              </div>
+            </div>
+            <div class="col-md-4 my-3">
+                <div class="learnCard position-relative">
+                  <div class="mx-auto myFitur d-inline">
+                      <div class="d-inline w-100 position-absolute learnFitur">
+                        <div class="learnIcons d-inline-block learnIconHeart"><i class="far fa-heart"></i></div>
+                        <div class="learnIcons d-inline-block learnIconShare"><i class="fas fa-share"></i></div>
+                        <div class="learnIcons d-inline-block learnIconEye"><i class="fas fa-eye"></i></div>
+                      </div>
+                  </div>
+                  <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Advanced</div>
+                  <div class="position-absolute w-100 px-2 learnBody" id="learnBody1">
+                    <div class="row">
+                      <div class="col-12 myLearn">
+                          <h5 class="learnTitle">Pengukuran Arus Listrik Arduino Python</h5>
+                          <p style="font-size: .8rem;" class="learnDescription"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, consequatur.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    id="learnImg1"
+                    class="learnImg h-100"
+                    src="../img/content/guide2.jpg"
+                  />
+                
+                </div>
+              </div>
+              <div class="col-md-4 my-3">
+                  <div class="learnCard position-relative">
+                     <div class="mx-auto myFitur d-inline">
+                        <div class="d-inline w-100 position-absolute learnFitur">
+                          <div class="learnIcons d-inline-block learnIconHeart"><i class="far fa-heart"></i></div>
+                          <div class="learnIcons d-inline-block learnIconShare"><i class="fas fa-share"></i></div>
+                          <div class="learnIcons d-inline-block learnIconEye"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+                    <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Beginner</div>
+                    <div class="position-absolute w-100 px-2 learnBody" id="learnBody1">
+                      <div class="row">
+                        <div class="col-12 myLearn">
+                            <h5 class="learnTitle">Tips Perakitan Arduino</h5>
+                            <p style="font-size: .8rem;" class="learnDescription">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, consequatur.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <img
+                      id="learnImg1"
+                      class="learnImg h-100"
+                      src="../img/content/shop2.jpg"
+                    />
+                  
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="container-fluit footer py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 my-4">
+            <div class="d-flex mb-2">
+              <img
+                src="../img/content/favicon.png"
+                class="footerIcon"
+                width="43px"
+                alt=""
+              />
+              <h3 class="ml-4">Iotonomous</h3>
+            </div>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem
+              esse ullam quia illo labore perspiciatis pariatur blanditiis
+              laboriosam similique cum, laborum aperiam nihil amet itaque.
+            </p>
+            <div class="grWhite"></div>
+            <div>
+              <p>
+                <i class="fas fa-envelope mr-3"></i> khusnul20032002@gmail.com
+              </p>
+            </div>
+            <div class="grWhite"></div>
+            <div>
+              <p><i class="fas fa-phone mr-3"></i> (+62)882-1726-2025</p>
+            </div>
+            <div class="grWhite"></div>
+            <div>
+              <p>
+                <i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan,
+                EastJava
+              </p>
+            </div>
+            <div class="grWhite"></div>
+          </div>
+          <div class="col-md-3 my-4">
+            <h5 class="mb-4">Useful Links</h5>
+            <div class="row">
+              <div class="col-8 link">
+                <p>
+                  <i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a>
+                </p>
+                <p>
+                  <i class="fas fa-angle-right mr-1"></i>
+                  <a href="#">Quick Guides</a>
+                </p>
+                <p>
+                  <i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a>
+                </p>
+                <p>
+                  <i class="fas fa-angle-right mr-1"></i>
+                  <a href="#">Terms of Service</a>
+                </p>
+                <p>
+                  <i class="fas fa-angle-right mr-1"></i>
+                  <a href="#">Privacy Policy</a>
+                </p>
+                <p>
+                  <i class="fas fa-angle-right mr-1"></i>
+                  <a href="#">Send Feedback</a>
+                </p>
+              </div>
+              <div class="col-4 link">
+                <p>
+                  <i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a>
+                </p>
+                <p>
+                  <i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a>
+                </p>
+                <p>
+                  <i class="fas fa-angle-right mr-1"></i> <a href="#">News</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 my-4">
+            <h6>
+              "Propel, propel, propel your craft softly down liquid solution.
+              Ecstatically, ecstatically, ecstatically, ecstatically, existence
+              is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="container-fluit endFooter p-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 pt-3">
+            Developed by <a href="#">Kodeberkah</a>
+          </div>
+          <div class="col-md-6 pt-3 text-center">
+            <div class="d-inline">
+              <div class="iconSocial">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="iconSocial">
+                <i class="fab fa-facebook"></i>
+              </div>
+              <div class="iconSocial">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="iconSocial">
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        $('.learnIconEye').click(function() {
+          var title = $(this).parents('.learnCard').find('.learnTitle').text();
+          var description = $(this).parents('.learnCard').find('.learnDescription').text();
+          var category = $(this).parents('.learnCard').find('.learnCategory').text();
+          localStorage.setItem('learnTitle', title);
+          localStorage.setItem('learnDescription', description);
+          localStorage.setItem('learnCategory', category);
+          window.location.href = 'detaillearn.html';
+        });
+      });
+    </script>
+
+  </body>
+</html>

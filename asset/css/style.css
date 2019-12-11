@@ -1,0 +1,1094 @@
+body {
+  overflow-x: hidden !important;
+  /* height: 2000px; */
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  top: 0;
+  background-color: transparent;
+  z-index: 100;
+  transition: all 0.3s;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+}
+
+.nav-down {
+  background-color: white;
+  color: black;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  transform: all 0.3s;
+}
+
+#brand-nav {
+  position: relative;
+  margin: 15px 20px;
+  left: 5%;
+  cursor: pointer;
+}
+
+#brand-nav p {
+  color: white;
+  position: relative;
+  top: -8px;
+  display: inline;
+}
+
+#brand-nav img {
+  display: inline;
+  position: relative;
+  top: -10px;
+}
+
+#menu-nav {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  display: inline-block;
+}
+
+#menu-nav ul li svg {
+  color: white;
+}
+
+#menu-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#menu-nav ul li {
+  margin: 0px 20px;
+  position: relative;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+#menu-nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#menu-nav ul li a:hover {
+  color: #3694ce !important;
+}
+
+#menu-nav ul li:hover {
+  transform: scale(1.1) !important;
+}
+
+#menu-toggle,
+#menu-close {
+  width: 30px;
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  cursor: pointer;
+  display: none;
+}
+
+#menu-toggle svg,
+#menu-close svg {
+  font-size: 20px;
+}
+
+#menu-close {
+  top: 20px;
+  display: none;
+}
+
+#menu-close .line:nth-child(1),
+#menu-close .line:nth-child(2) {
+  width: 100%;
+  transform: rotate(45deg);
+  position: absolute;
+  height: 3px;
+  top: 0 !important;
+  background-color: white;
+  display: none;
+  margin: 5px 0px;
+}
+
+#menu-close .line:nth-child(2) {
+  transform: rotate(-45deg) !important;
+}
+
+.line {
+  width: 100%;
+  position: relative;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0px;
+}
+
+.myMenu::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  left: 20%;
+  height: 3px;
+  top: 20px;
+  background-color: #4e96c7 !important;
+  transition: all 0.3s;
+}
+
+.myMenu:hover::after {
+  width: 60%;
+}
+
+.active-nav::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  height: 3px;
+  top: 20px;
+  background-color: #4e96c7 !important;
+  transition: all 0.3s;
+}
+
+@media only screen and (max-width: 857px) {
+  #menu-nav {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  #menu-close {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #menu-nav {
+    display: none;
+    position: fixed;
+    left: 0px;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    background-color: white;
+    z-index: 900;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  #menu-close .line:nth-child(1),
+  #menu-close .line:nth-child(2) {
+    display: inline-block;
+  }
+
+  #menu-nav ul {
+    display: block;
+  }
+
+  #menu-nav ul li {
+    margin: 35px 0px;
+  }
+
+  #menu-nav ul li::after {
+    left: 0;
+  }
+
+  #menu-nav ul li:hover::after {
+    width: 30%;
+  }
+
+  #menu-toggle {
+    display: inline-block;
+  }
+
+  #menu-close {
+    display: none;
+  }
+
+  .active-nav::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    left: 0%;
+    height: 4px;
+    bottom: -3px;
+    background-color: #8bccf6 !important;
+    transition: all 0.3s;
+  }
+}
+
+.text-black {
+  color: black !important;
+}
+
+.active-nav {
+  color: #63addf !important;
+  font-size: 15px;
+}
+
+.overflowx {
+  overflow: hidden !important;
+}
+
+#parallax1 {
+  width: 100%;
+  position: relative;
+  height: 700px;
+  background-image: linear-gradient(to left, #053142, #165986);
+  overflow: hidden;
+}
+
+.parallax {
+  width: 100%;
+  position: relative;
+  background-image: linear-gradient(to left, #053142, #165986);
+  overflow: hidden;
+}
+
+#parallax1-img {
+  background-image: url("../img/content/arduino.jpg");
+  width: 100% !important;
+  position: absolute;
+  z-index: 0;
+  background-position-y: -100px;
+  opacity: 0.5;
+  bottom: 0 !important;
+  background-size: cover;
+  top: 0 !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#parallax-objek1 {
+  position: absolute;
+  top: -250px !important;
+  left: -90px;
+  height: 158%;
+  z-index: 0;
+}
+
+#des-parallax1 {
+  width: 50%;
+  position: absolute;
+  right: 15%;
+  top: 20%;
+  text-align: right;
+  height: 300px;
+}
+
+#des-parallax1 p {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  color: white;
+  font-size: 20px;
+}
+
+#des-parallax1 h2 {
+  z-index: 20;
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  z-index: 0;
+  font-size: 95px;
+}
+
+#search-parallax1 {
+  position: absolute;
+  right: 0;
+  width: 70%;
+  background-color: white;
+  height: 45px;
+  bottom: 40px;
+  border-radius: 30px;
+}
+
+#search-par1 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+#search-par1 input {
+  width: 100%;
+  position: absolute;
+  height: 45px;
+  left: 0;
+  border: none;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  z-index: 10;
+}
+
+#search-parallax1 button {
+  border: none;
+  transform: scale(1.8);
+  height: 45px;
+  border-radius: 50%;
+  line-height: 10px;
+  box-sizing: border-box;
+  padding-bottom: 2px;
+  background-image: linear-gradient(to right, #2677ad, #8bccf6);
+  width: 45px;
+  padding-left: 7px;
+  font-size: 20px;
+  position: relative;
+  z-index: 20;
+  color: white;
+}
+
+@media only screen and (max-width: 1234px) {
+  #parallax-objek1 {
+    display: none;
+  }
+
+  #parallax1-img {
+    background-image: url("../img/content/surabaya.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  #des-parallax1 {
+    width: 90%;
+    position: relative;
+    right: 0%;
+    top: 20%;
+    text-align: right;
+    height: 250px;
+  }
+
+  #des-parallax1 h1 {
+    z-index: 20;
+    color: white;
+    position: relative;
+    right: 0;
+    font-size: 80px;
+    left: 0;
+  }
+
+  #des-parallax1 p {
+    position: relative;
+    right: 10px;
+    top: 0px;
+    color: white;
+    font-size: 20px;
+  }
+
+  #search-parallax1 {
+    width: 55%;
+  }
+
+  #parallax1 {
+    height: 525px;
+  }
+
+  #parallax1-img {
+    opacity: 0.4;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #search-parallax1 {
+    position: absolute;
+    right: 0;
+    width: 55%;
+    background-color: white;
+    height: 45px;
+    bottom: 20px;
+    border-radius: 30px;
+  }
+
+  #search-parallax1 {
+    width: 90%;
+  }
+
+  #des-parallax1 h2 {
+    font-size: 40px;
+  }
+}
+
+.myCloud {
+  position: absolute;
+  bottom: 0;
+  z-index: 60;
+}
+
+.judul {
+  color: rgb(0, 39, 0);
+  width: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.judul::after {
+  content: "";
+  width: 40%;
+  position: absolute;
+  left: 0%;
+  height: 4px;
+  border-radius: 20px;
+  bottom: -10px;
+  background-color: rgb(214, 214, 214);
+}
+
+.judul::before {
+  content: "";
+  width: 20%;
+  position: absolute;
+  left: 0%;
+  height: 8px;
+  border-radius: 20px;
+  bottom: -12px;
+  background-color: #8bccf6;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.judul:hover::before {
+  left: 20%;
+}
+
+.judul2 {
+  color: white;
+  width: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.judul2::after {
+  content: "";
+  width: 40%;
+  position: absolute;
+  left: 0%;
+  height: 4px;
+  border-radius: 20px;
+  bottom: -10px;
+  background-color: rgb(98, 212, 98);
+}
+
+.judul2::before {
+  content: "";
+  width: 20%;
+  position: absolute;
+  left: 0%;
+  height: 8px;
+  border-radius: 20px;
+  bottom: -12px;
+  background-color: white;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.judul2:hover::before {
+  left: 20%;
+}
+
+.judul2Center {
+  color: rgb(0, 39, 0);
+  width: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.judul2Center::after {
+  content: "";
+  width: 40%;
+  position: absolute;
+  left: 30%;
+  height: 4px;
+  border-radius: 20px;
+  bottom: -10px;
+  background-color: rgb(228, 228, 228);
+}
+
+.judul2Center::before {
+  content: "";
+  width: 20%;
+  position: absolute;
+  left: 40%;
+  height: 8px;
+  border-radius: 20px;
+  bottom: -12px;
+  text-align: center;
+  background-color: rgb(98, 212, 98);
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.judul2Center:hover::before {
+  width: 40%;
+  left: 30%;
+}
+
+.myCarousel {
+  width: 100%;
+  height: 150px;
+  background-color: black;
+  overflow: hidden;
+  margin: 10px 0px;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.myCarousel:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.myCarousel img {
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.judulCarousel {
+  width: 100%;
+  text-align: center;
+  padding-top: 70px;
+  position: absolute;
+  color: white;
+  left: -30px;
+  opacity: 0;
+  transition: all 0.3s;
+  height: 100%;
+  top: 0;
+}
+
+.myCarousel:hover .judulCarousel {
+  left: 0;
+  opacity: 1;
+  z-index: 10;
+}
+
+.judulCarousel:hover + img {
+  opacity: 0.4;
+}
+
+.myCarousel img:hover {
+  opacity: 0.4;
+}
+
+.my-paraph {
+  font-family: sans-serif;
+}
+
+.my-paraph2 {
+  font-family: sans-serif;
+  color: white;
+}
+
+.sby-button {
+  padding: 8px 50px;
+  color: white;
+  border-radius: 40px;
+  font-weight: bold;
+  font-family: sans-serif;
+  background-image: linear-gradient(to left, #8be1f6, #176395);
+  transition: all 0.3s;
+}
+
+.sby-button:hover {
+  box-shadow: 0px 0px 10px #165986;
+  color: white;
+  transform: scale(1.05);
+}
+
+.sby-button2 {
+  padding: 8px 55px;
+  color: #8bccf6;
+  border-radius: 100px;
+  font-weight: bold;
+  font-family: sans-serif;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.sby-button2:hover {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.2);
+  color: #8bccf6;
+  transform: scale(1.05);
+}
+
+.content-img1 {
+  width: 90%;
+  display: inline-block;
+  position: relative;
+  left: 5%;
+}
+
+#content2 {
+  background-image: linear-gradient(to bottom right, #8be1f6, #176395);
+  color: white;
+}
+
+.builtCarousel {
+  background-color: white;
+  color: #053142;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  height: 270px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.builtCarousel:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+}
+
+.builtCarousel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 5px;
+  background-color: #78bae6;
+  transition: all 0.3s;
+}
+
+.builtCarousel:hover::after {
+  width: 100%;
+}
+
+.builtCarousel svg {
+  font-size: 40px;
+}
+
+.builtCarousel p {
+  font-size: 13px;
+}
+
+.builtCarousel:hover {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.3);
+}
+
+.paraphUtama {
+  font-size: 13px;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.slick-slide {
+  margin: 0px 10px;
+}
+
+.slick-next::before,
+.slick-prev::before {
+  background-color: gainsboro;
+  border-radius: 50%;
+  top: -2 px !important;
+  z-index: 20;
+  position: relative;
+}
+
+.shopContent {
+  background-image: url("../img/content/shop1.jpg");
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.shopProject {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 20px;
+  width: 70%;
+  z-index: 20;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.shopAPI {
+  z-index: 20;
+  position: relative;
+}
+
+.API {
+  width: 100%;
+  color: #053142;
+  border-radius: 10px;
+  background-color: white;
+  margin: 20px 0px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.API:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
+}
+
+.categoryAPI {
+  width: 50%;
+  border-bottom: 3px solid gainsboro;
+  position: relative;
+}
+
+.priceAPI {
+  color: #165986;
+}
+
+.fitureAPI ol li {
+  color: #176395;
+  font-size: 14px;
+}
+
+.API button {
+  position: absolute;
+  bottom: 3px;
+  left: 33%;
+}
+
+/* footer tua #1e2538 */
+/* footer muda #242c41 */
+
+.footer {
+  background-color: #242c41;
+  color: white;
+}
+
+.footerIcon {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.grWhite {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  opacity: 0.5;
+  margin: 0.8em 0;
+  padding: 0;
+}
+
+.link a,
+.link a:hover {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.iconSocial {
+  margin: 0px 5px;
+  text-align: center;
+  padding-left: 1px;
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  /* border: 1px solid white; */
+  font-size: 23px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.iconSocial:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.endFooter {
+  background-color: #1e2538;
+  color: white;
+}
+
+.myTools {
+  transition: all 0.3s;
+  z-index: 50;
+  position: relative;
+  cursor: pointer;
+}
+
+.myTools:hover {
+  transform: scale(1.1);
+}
+
+/* corousel */
+
+/* learn */
+
+.learnCard {
+  width: 100%;
+  height: 300px;
+  border-radius: 0px;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom right, #8be1f6, #176395);
+  position: relative;
+}
+.learnCategory {
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.learnCategory:hover {
+  background-color: white;
+  color: black !important;
+}
+.learnBody {
+  bottom: 0;
+  color: white !important;
+  z-index: 20;
+}
+
+.myLearn {
+  position: relative;
+  bottom: -50px;
+  background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.75), rgba(0,0,0,0.5), rgba(0,0,0,0.25), transparent);
+  transition: all .3s;
+}
+.learnFitur {
+  z-index: 9;
+  text-align: center;
+  top: 38%;
+}
+.learnIcons {
+  width: 40px;
+  height: 40px;
+  padding-top: 8px;
+  text-align: center;
+  border-radius: 40px;
+  background-color: white;
+}
+.myFitur {
+  transition: all .3s;
+  z-index: 20;
+  bottom: -18px;
+  opacity: 0;
+}
+.learnCard:hover .myFitur {
+  bottom: 0;
+  opacity: 1;
+}
+.learnIcons {
+  transition: all .3s;
+}
+.learnIcons:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, .2);
+  cursor: pointer;
+}
+.myLearn p {
+  opacity: 0;
+  transition: all .3s;
+}
+.myLearn:hover p {
+  opacity: 1;
+}
+.myLearn:hover {
+  bottom: 0;
+}
+.learnBody:hover ~ .learnImg {
+  transition: all 0.3s !important;
+  opacity: 0.3 !important;
+}
+.learnImgOnHover {
+  transition: all 0.3s;
+  opacity: 0.6;
+}
+.learnCard .learnImg {
+  transition: all 0.3s;
+  opacity: 0.6;
+}
+.learnCard:hover .learnImg {
+  transform: scale(1.1);
+  opacity: 0.3;
+}
+@media only screen and (max-width: 780px) {
+  .learnFilter {
+    padding: 0px 30px !important;
+  }
+}
+
+.myLearnDetail {
+  transition: all .3s;
+}
+.myLearnDetail:hover {
+  background-color: rgba(109, 109, 109, 0.1);
+}
+.learnImgDetail, .learnCardDetail {
+  transition: all .3s;
+}
+.learnImgDetail:hover {
+  transform: scale(1.1);
+  opacity: 0.3;
+}
+.learnCardDetail:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* Forum */
+.myForumMenu {
+  display: inline-block;
+}
+
+.myForumMenu p {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.myForumMenu p:hover {
+  color: #3694ce;
+}
+
+@media only screen and (max-width: 991px) {
+  .myForumMenu {
+    display: none;
+  }
+}
+
+.myForum {
+  background-color: white;
+  transition: all 0.3s;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  width: 100%;
+}
+
+.name {
+  display: none;
+}
+
+.comment {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 1199px) {
+  .myForum:hover {
+    box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.2);
+  }
+
+  .iconForum {
+    width: 100%;
+    display: block !important;
+  }
+
+  .comment {
+    display: none;
+  }
+
+  .myForum {
+    display: inline-block;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .name {
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 701px) {
+  .myForum:hover {
+    background-color: rgb(233, 233, 233);
+  }
+}
+
+.myForum-title h5 {
+  font-weight: bold;
+}
+
+.myForum-info {
+  top: 25px;
+  right: 10px;
+}
+
+.myForum-info {
+  color: grey;
+}
+
+.iconForum {
+  width: 55px;
+  height: 55px;
+}
+
+.myForumSolved {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(57, 163, 235, 0.7);
+  color: white;
+  line-height: 55px;
+  text-align: center;
+}
+
+.mydays {
+  display: inline;
+}
+
+@media only screen and (max-width: 780px) {
+  .mydays {
+    display: none !important;
+  }
+}
+
+/* shop */
+
+.shopBody {
+  cursor: pointer;
+}
+
+.shopCategory {
+  left: 0;
+  font-size: 0.8rem;
+  top: -21px;
+}
+
+.myCardShop {
+  transition: all 0.3s;
+}
+
+.myCardShop:hover {
+  background-color: rgb(238, 238, 238);
+}
+
+.myShopImg img {
+  transition: all 0.3s;
+}
+
+.myShopImg:hover img {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+.shopFilter li {
+  cursor: pointer;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title></title>
+	<link rel="shortcut icon" href="../img/content/favicon.png" type="image/x-icon" />
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/all.min.css" />
+	<link rel="stylesheet" href="../css/aos.css" />
+	<link rel="stylesheet" href="../css/fontawesome.min.css" />
+	<link rel="stylesheet" href="../css/slick-theme.css" />
+	<link rel="stylesheet" href="../css/slick.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/all.min.js"></script>
+	<script src="../js/aos.js"></script>
+	<script src="../js/slick.min.js"></script>
+	<script src="../js/typeit.min.js"></script>
+	<script src="../js/script.js"></script>
+	<script src="../js/Chart.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div id="brand-nav">
+				<div onclick="document.location.href='index.html'" class="pt-1">
+					<img src="../img/content/favicon.png" width="40px" alt="" />
+					<p style="font-size: 19px;" class="ml-2 text-dark">Iotonomous</p>
+				</div>
+			</div>
+			<!-- 1e6795 Tua -->
+			<!-- 8bccf6 Muda -->
+			<div id="menu-nav">
+				<ul style="list-style: none;" id="ul-menu">
+					<li class="myMenu"><a class="text-dark" href="../../index.html">HOME</a></li>
+					<li class="myMenu">
+						<a class="text-dark active-nav" href="../page/learn.html">LEARN</a>
+					</li>
+					<li class="myMenu"><a class="text-dark" href="forum.html">FORUMS</a></li>
+					<li class="myMenu"><a href="shop.html" class="text-dark">SHOP</a></li>
+					<li class="myMenu"><a class="text-dark" href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
+					<li id="settingsNav">
+						<button class="btn btn-primary d-inline-block btn-sm px-4 position-relative" style="top: -5px;" onclick="window.location.href='../page/login.html'">
+							Signin
+						</button>
+					</li>
+					<li id="settingsClose" style="display: none;">
+						<i class="fas fa-times"></i>
+					</li>
+				</ul>
+			</div>
+			<script>
+				$("#search-nav").on("click", function () {
+					if (this.hash !== "") {
+						event.preventDefault();
+						var hash = this.hash;
+						$("html, body").animate({
+								scrollTop: $(hash).offset().top
+							},
+							1000,
+							function () {
+								window.location.hash = hash;
+							}
+						);
+					}
+					$("#input-search").focus();
+				});
+			</script>
+			<div id="menu-toggle">
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<!-- <i class="fas fa-stream"></i> -->
+			</div>
+			<div id="menu-close">
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<!-- <i class="fas fa-times"></i> -->
+			</div>
+		</nav>
+    </header>
+    <div class="container-fluid pt-3 mt-5">
+        <div class="row pt-5">
+            <div class="col-md-2">
+                <div class="position-sticky text-center" style="top: 110px; font-size: 1.4rem;">
+                    <div class="mx-3 border-bottom text-left">
+                        <h5 class="text-left">Ninno Khusnul</h5>
+                        <p class="text-left" style="font-size: .8rem;">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, totam!
+                        </p>
+                        <button class="btn px-3 rounded mb-3 border border-info">Follow</button>
+                    </div>
+                    <p class="p-0 my-3"><i class="far fa-thumbs-up" id="dislike"></i></p>
+                    <p class="p-0 my-3"><i class="fas fa-thumbs-up d-none" id="like"></i></p>
+                    <p class="p-0 my-3"><i class="far fa-bookmark"></i></p>
+                    <p class="p-0 my-3"><i class="fas fa-share"></i></p>
+                </div>
+            </div>
+            <script>
+
+            </script>
+            <div class="col-md-8 rounded myLearnDetail mb-5 pt-4 pb-2">
+                <div class="d-flex position-absolute" style="right: 20px; top: 20px; color: gray;"> 
+                    <div class="learnIconsEye mr-4 mt-1" style="font-size: 1.2rem;">
+                        <i class="fas fa-eye mr-1"></i>10 
+                    </div>
+                    <div class="learnCategory text-primary border border-primary rounded-pill px-3 py-1">Category</div>
+                </div>
+                <h3 class="learnTitle mt-4 mb-3">Judul</h3>
+                <div class="overflow-hidden rounded mt-2" style="height: 300px;">
+                    <img class="learnImgDetailContent" src="../img/content/guide3.jpg" data-toggle="modal" data-target="#modal1" class="w-100" alt="">
+                </div>
+                <div id="modal1" role="dialog" class="modal fade" tabindex="-1">
+                    <div class="modal-dialog modal-lg" role="img">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal1Label">Image</h5>
+                                <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img class="learnImgDetailContent w-100" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-primary mb-2">
+                    <i>www.adafruit.com/alat</i>
+                </div>
+                <div class="my-3">
+                    <p class="learnDescription d-inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, nulla! Obcaecati qui voluptatibus sapiente reprehenderit.</p>    
+                    <span class="DescriptionPlus d-inline">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ad facilis quidem possimus necessitatibus. Vitae cum quod eligendi voluptatem hic accusantium numquam, repudiandae voluptates unde reprehenderit aut libero rerum est.</span>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis rerum quis sapiente esse delectus officia provident. Nihil, harum. Itaque perspiciatis dolor aperiam, molestiae odio pariatur tempore nihil in a officia, ab consectetur quidem nam facilis dicta dolores dolorem consequuntur omnis quaerat, officiis provident modi tempora suscipit. Ab nemo odio quasi qui cumque debitis excepturi, autem reiciendis, asperiores deserunt eveniet fuga, quo possimus aliquam. Dolorem, laboriosam ipsum natus perspiciatis alias quasi quos. Deleniti, fugiat quibusdam doloribus, incidunt quo voluptas saepe nemo necessitatibus facere nesciunt fuga quasi distinctio error. Dolorem magnam necessitatibus enim libero, animi quaerat adipisci. Temporibus quisquam voluptatum blanditiis sit.    
+                    <p class="mt-4">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis porro ut sapiente consequatur dolores suscipit illo rem quos reiciendis. Reiciendis ea id voluptatem repellat itaque fugiat nobis mollitia ex aperiam consectetur voluptates quia numquam, perferendis molestiae nam obcaecati illum esse cupiditate exercitationem. Quia quae harum perferendis, labore deserunt rerum commodi cupiditate eligendi error optio? Modi est asperiores repudiandae, quas laudantium neque, numquam aspernatur dolorum accusantium nemo aliquam, expedita vero molestias repellat eum adipisci quos magnam illum. Ea facere molestias ut odio laborum, esse ratione dolores repellendus voluptatum numquam neque blanditiis? Distinctio deserunt ratione eum soluta expedita, ea, odio laborum, cumque exercitationem dolores officia mollitia nihil voluptas similique accusantium neque alias quisquam. Distinctio dignissimos, maxime optio atque temporibus omnis enim libero rerum ut quis vero eaque nemo illum. Aperiam consectetur earum, saepe culpa cum eveniet corrupti enim. Consequatur eaque, earum aspernatur, eum maxime cum illo excepturi quisquam saepe animi deserunt similique!
+                    </p>
+                </div>    
+            </div>
+            <div class="container my-5 pb-5">
+                <div class="row">                
+                    <div class="learnTools pt-2 border-top">
+                        <h4 class="my-2 mb-3">Tools</h4>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card learnCardDetail border-0">
+                                    <div class="rounded bg-dark overflow-hidden" style="height: 150px;">
+                                        <img src="../img/content/shop2.jpg" data-toggle="modal" data-target="#tool1" class="card-img-top learnImgDetail" alt="">
+                                    </div>
+                                    <div class="modal fade" id="tool1" role="dialog">
+                                        <div class="modal-dialog modal-lg" role="img">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="tool1Label">Tool 1</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="../img/content/shop2.jpg" class="w-100" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-2 m-0">
+                                        <h5 class="card-title my-1">Card Title</h5>
+                                        <p class="card-text" style="font-size: .8rem;">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam soluta sed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card learnCardDetail border-0">
+                                    <div class="rounded bg-dark overflow-hidden" style="height: 150px;">
+                                        <img src="../img/content/arduino.jpg" data-toggle="modal" data-target="#tool2" class="card-img-top learnImgDetail" alt="">
+                                    </div>
+                                    <div class="modal fade" id="tool2" role="dialog">
+                                        <div class="modal-dialog modal-lg" role="img">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="tool2Label">Tool 2</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-relevant="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="../img/content/arduino.jpg" class="w-100" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-2 m-0">
+                                        <h5 class="card-title my-1">Card Title</h5>
+                                        <p class="card-text" style="font-size: .8rem;">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam soluta sed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card learnCardDetail border-0">
+                                    <div class="rounded bg-dark overflow-hidden" style="height: 150px;">
+                                        <img src="../img/content/shop1.jpg" data-toggle="modal" data-target="#tool3" class="card-img-top learnImgDetail" alt="">
+                                    </div>
+                                    <div class="modal fade" id="tool3" role="dialog">
+                                        <div class="modal-dialog modal-lg" role="img">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="tool3Label">Tool 3</h5>
+                                                    <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="../img/content/shop1.jpg" class="w-100" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-2 m-0">
+                                        <h5 class="card-title my-1">Card Title</h5>
+                                        <p class="card-text" style="font-size: .8rem;">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam soluta sed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card learnCardDetail border-0">
+                                    <div class="rounded bg-dark overflow-hidden" style="height: 150px;">
+                                        <img src="../img/content/guide2.jpg" data-toggle="modal" data-target="#tool4" class="card-img-top learnImgDetail" alt="">
+                                    </div>
+                                    <div class="modal fade" role="dialog" id="tool4">
+                                        <div class="modal-dialog modal-lg" role="img">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Tool 4</h5>
+                                                    <button type="button" aria-label="Close" class="close" data-dismiss="modal">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="../img/content/guide2.jpg" class="w-100" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-2 m-0">
+                                        <h5 class="card-title my-1">Card Title</h5>
+                                        <p class="card-text" style="font-size: .8rem;">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam soluta sed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluit footer py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 my-4">
+                        <div class="d-flex mb-2">
+                            <img src="../img/content/favicon.png" class="footerIcon" width="43px" alt="">
+                            <h3 class="ml-4">Iotonomous</h3>
+                        </div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem esse ullam quia illo labore
+                            perspiciatis pariatur blanditiis laboriosam similique cum, laborum aperiam nihil amet itaque.
+                        </p>
+                        <div class="grWhite"> </div>
+                        <div>
+                            <p>
+                                <i class="fas fa-envelope mr-3"></i> khusnul20032002@gmail.com
+                            </p>
+                        </div>
+                        <div class="grWhite"></div>
+                        <div>
+                            <p>
+                                <i class="fas fa-phone mr-3"></i> (+62)882-1726-2025
+                            </p>
+                        </div>
+                        <div class="grWhite"></div>
+                        <div>
+                            <p>
+                                <i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan, EastJava
+                            </p>
+                        </div>
+                        <div class="grWhite"></div>
+                    </div>
+                    <div class="col-md-3 my-4">
+                        <h5 class="mb-4">Useful Links</h5>
+                        <div class="row">
+                            <div class="col-8 link">
+                                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a></p>
+                                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Quick Guides</a></p>
+                                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a></p>
+                                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Terms of Service</a></p>
+                                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Privacy Policy</a></p>
+                                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Send Feedback</a></p>
+                            </div>
+                            <div class="col-4 link">
+                                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a></p>
+                                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a></p>
+                                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">News</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 my-4">
+                        <h6>
+                            "Propel, propel, propel your craft softly down liquid solution. Ecstatically, ecstatically,
+                            ecstatically, ecstatically,
+                            existence is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="container-fluit endFooter p-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 pt-3">
+                        Developed by <a href="#">Kodeberkah</a>
+                    </div>
+                    <div class="col-md-6 pt-3 text-center">
+                        <div class="d-inline">
+                            <div class="iconSocial">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="iconSocial">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                            <div class="iconSocial">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="iconSocial">
+                                <i class="fab fa-github"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+        $(document).ready(function() {
+            let ls = localStorage;
+            let title = localStorage.getItem('learnTitle');
+            let description = localStorage.getItem('learnDescription');
+            let category = localStorage.getItem('learnCategory');
+            if( ls.learnTitle === undefined ||
+                ls.learnDescription === undefined ||
+                ls.learnCategory === undefined ) {
+                    window.location.href = 'learn.html';
+            } else {
+                document.title = "Learn | " + title;
+                $('.learnTitle').text(title);
+                $('.learnDescription').text(description);
+                $('.learnCategory').text(category);
+                if(title === "Impelemntasi Raspberry pada Arduino") {
+                    $('.learnImgDetailContent').attr('src', '../img/content/shop1.jpg');
+                } else if(title === "Pengukuran Arus Listrik Arduino Python") {
+                    $('.learnImgDetailContent').attr('src', '../img/content/guide2.jpg');
+                } else if(title === "Tips Perakitan Arduino") {
+                    $('.learnImgDetailContent').attr('src', '../img/content/shop2.jpg');
+                }
+            }
+            $('#like').click(function() {
+                $('#dislike').removeClass('d-none');
+                $('#like').addClass('d-none');
+            });
+            $('#dislike').click(function() {
+                $('#dislike').addClass('d-none');
+                $('#like').removeClass('d-none');
+            });
+        });
+    </script>
+</body>
+
+</html>

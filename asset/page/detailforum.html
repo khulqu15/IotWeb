@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title></title>
+	<link rel="shortcut icon" href="../img/content/favicon.png" type="image/x-icon" />
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/all.min.css" />
+	<link rel="stylesheet" href="../css/aos.css" />
+	<link rel="stylesheet" href="../css/fontawesome.min.css" />
+	<link rel="stylesheet" href="../css/slick-theme.css" />
+	<link rel="stylesheet" href="../css/slick.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/all.min.js"></script>
+	<script src="../js/aos.js"></script>
+	<script src="../js/slick.min.js"></script>
+	<script src="../js/typeit.min.js"></script>
+	<script src="../js/script.js"></script>
+	<script src="../js/Chart.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div id="brand-nav">
+				<div onclick="document.location.href='index.html'" class="pt-1">
+					<img src="../img/content/favicon.png" width="40px" alt="" />
+					<p style="font-size: 19px;" class="ml-2">Iotonomous</p>
+				</div>
+			</div>
+			<!-- 1e6795 Tua -->
+			<!-- 8bccf6 Muda -->
+			<div id="menu-nav">
+				<ul style="list-style: none;" id="ul-menu">
+					<li class="myMenu"><a class="text-dark" href="../../index.html">HOME</a></li>
+					<li class="myMenu">
+						<a class="text-dark" href="../page/learn.html">LEARN</a>
+					</li>
+					<li class="myMenu"><a class="text-dark" href="forum.html">FORUMS</a></li>
+					<li class="myMenu"><a href="shop.html" class="active-nav">SHOP</a></li>
+					<li class="myMenu"><a class="text-dark" href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
+					<li id="settingsNav">
+						<button class="btn btn-primary d-inline-block btn-sm px-4 position-relative" onclick="window.location.href='../page/login.html'" style="top: -5px;">
+							Signin
+						</button>
+					</li>
+					<li id="settingsClose" style="display: none;">
+						<i class="fas fa-times"></i>
+					</li>
+				</ul>
+			</div>
+			<script>
+				$("#search-nav").on("click", function () {
+					if (this.hash !== "") {
+						event.preventDefault();
+						var hash = this.hash;
+						$("html, body").animate({
+								scrollTop: $(hash).offset().top
+							},
+							1000,
+							function () {
+								window.location.hash = hash;
+							}
+						);
+					}
+					$("#input-search").focus();
+				});
+			</script>
+			<div id="menu-toggle">
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<!-- <i class="fas fa-stream"></i> -->
+			</div>
+			<div id="menu-close">
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<!-- <i class="fas fa-times"></i> -->
+			</div>
+		</nav>
+	</header>
+	<div>
+		<div class="container-fluid mt-5 pt-5">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="position-sticky" style="top: 100px;">
+						<div class="text-center my-4">
+							<button class="btn btn-primary rounded-pill px-5 py-2 shadow font-weight-bold w-50 my-2">Reply</button>
+							<button class="btn btn-light border-primary rounded-pill px-5 py-2 font-weight-bold w-50">Follow</button>
+							<div class="text-left mx-4 mt-4 myForumMenu">
+								<p class="my-3">
+									<span class="font-weight-normal allForums" onclick="window.location.href='forum.html'">
+										<i class="mx-3 fas fa-book"></i> All Threads
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal popularForums" onclick="window.location.href='forum.html'">
+										<i class="mx-3 fas fa-star"></i> Popular
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal solvedForums" onclick="window.location.href='forum.html'">
+										<i class="mx-3 fas fa-check-circle"></i> Solved
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal unsolvedForums" onclick="window.location.href='forum.html'">
+										<i class="mx-3 fas fa-times-circle"></i> Unsolved
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal no-repliedForums" onclick="window.location.href='forum.html'">
+										<i class="mx-3 fas fa-reply"></i> No Replies yet
+									</span>
+								</p>
+								<p class="my-3">
+									<span class="font-weight-normal leaderBoardForums" onclick="window.location.href='forum.html'">
+										<i class="mx-3 fas fa-clipboard"></i> Leaderboard
+									</span>
+								</p>
+	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-7 myForums dataSpy_Example" id="myForums" style="overflow-y: visible;" data-spy="scroll"
+					data-target="#scrollSpyExample" data-offset="0">
+					<div id="myProblemSolve"
+						class="myForum position-relative rounded-lg my-2 px-2 pt-3 pb-1 solved replied python">
+						<div class="col- text-center d-flex px-3 myIconForum">
+							<div class="iconForum position-relative my-2 d-inline-block rounded-circle overflow-hidden">
+								<img class="myUserImage h-100" alt="">
+							</div>
+							<h6 class="name text-primary py-4 mx-3 d-inline"><span id="myUserName"></span></h6>
+							<p class="d-inline text-muted py-4 mydays">| 3 days ago</p>
+						</div>
+
+						<div class="pt-2 pb-3 px-3 myForum-title d-block w-100">
+							<h5 class="mb-0 pb-0 myForumHeader badge-light p-3 rounded-lg" id="myHeaderProblem"></h5>
+							<p class="myForumParaph text-justify py-2 m-0 myForum-description" id="pythonProblemParaph">
+								I'm following this tutorial for image/video processing. I am using Python 2.7 on OS X. I
+								already
+								have a virtual
+								environment working, and I used to be able to import cv2 and run code without any
+								problems.
+								While I was running this
+								tutorial, I ran into this problem:
+							</p>
+							<div class="bg-dark rounded-lg p-3 mb-2">
+								<code>
+									File "convert.py", line 10, in <module>
+										import cv2
+										ImportError:
+										dlopen(/Users/angelovillasanta/.virtualenvs/cv/lib/python2.7/site-packages/cv2.so,
+										2):
+										Library not loaded: /usr/local/opt/jpeg/lib/libjpeg.8.dylib
+										Referenced from:
+										/usr/local/Cellar/opencv3/HEAD-6fe1898/lib/libopencv_imgcodecs.3.2.dylib
+									</code>
+									Reason: image not found
+							</div>
+							<p>
+								Now I'm not sure what to do or how to resolve this. I seem to be missing the jpeg
+								library but
+								when I run brew install
+								jpeg, the console tells me it's already installed
+							</p>
+						</div>
+						<div class="position-absolute myForum-info">
+							<p class="mx-2" style="font-size: 0.8rem !important;">
+								<span>
+									<i class="fas fa-eye mx-2"></i><span class="myViewers"></span>
+								</span>
+								<span class="comment">
+									<i class="fas fa-comment mx-2"></i><span class="myComments"></span>
+								</span>
+								<span id="myTypeForum" class="border myForumType px-3 py-1 mx-1 rounded-pill"></span>
+								</span>
+							</p>
+						</div>
+					</div>
+
+					<div id="reply"
+						class="myForum position-relative rounded-lg my-2 px-2 pt-3 pb-1 bg-light solved replied python">
+
+						<div class="col- text-center d-flex px-3 myIconForum">
+							<div class="iconForum position-relative my-2 d-inline-block rounded-circle overflow-hidden">
+								<img class="myUserReplied h-100" alt="">
+							</div>
+							<h6 class="name text-primary py-4 mx-3 d-inline"><span id="repliedBy"></span></h6>
+							<p class="d-inline text-muted py-4">| 1 days ago</p>
+						</div>
+
+						<div class="pt-2 pb-3 px-3 myForum-title d-block w-100">
+							<p>
+								<b>Give this a try</b>
+								<br>
+								<div class="bg-dark rounded-lg p-3 mb-2">
+									<code>
+										try symlinking it from $ sudo ln -s
+										/usr/local/Cellar/jpeg/8d/lib/libjpeg.8.dylib
+										/usr/local/opt/jpeg/lib/libjpeg.8.dylib
+									</code>
+								</div>
+								Found here and it worked for me <a
+									href="https://github.com/lovell/sharp/issues/323">https://github.com/lovell/sharp/issues/323</a>
+							</p>
+
+							<div class="position-absolute myForum-info">
+								<div class="badge-success p-2 px-4 rounded-pill ">Best Answer</div>
+							</div>
+						</div>
+					</div>
+					<div id="noReply-yet" class="badge-danger p-2 mb-5 rounded-lg text-center d-none">No Reply</div>
+				</div>
+				<div class="col-md-2 mt-5 pt-5 position-relative">
+					<div class="scrollSpyExample position-sticky sticky-top" style="top: 100px;" id="scrollSpyExample">
+						<a href="#myProblemSolve" class="list-group-item list-group-item-action">The Problem</a>
+						<a href="#reply" class="list-group-item list-group-item-action">The Replies</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$("#search-nav").on("click", function () {
+				if (this.hash !== "") {
+					event.preventDefault();
+					var hash = this.hash;
+					$("html, body").animate({
+							scrollTop: $(hash).offset().top
+						},
+						1000,
+						function () {
+							window.location.hash = hash;
+						}
+					);
+				}
+				$("#input-search").focus();
+			});
+		</script>
+		<div id="menu-toggle">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<!-- <i class="fas fa-stream"></i> -->
+		</div>
+		<div id="menu-close">
+			<div class="line"></div>
+			<div class="line"></div>
+			<!-- <i class="fas fa-times"></i> -->
+		</div>
+		</nav>
+		</header>
+
+		<script>
+			let ls = localStorage;
+			let theProblem = localStorage.getItem("header");
+			let theType = localStorage.getItem("type");
+			let theAuthor = localStorage.getItem("author");
+			let theParaph = localStorage.getItem("paraph");
+			let theComments = localStorage.getItem("comments");
+			let theViewers = localStorage.getItem("viewers");
+			let theImage = localStorage.getItem("userImage");
+			let replied = localStorage.getItem("repliedBy");
+			if (
+				ls.header === undefined ||
+				ls.type === undefined ||
+				ls.author === undefined ||
+				ls.paraph === undefined ||
+				ls.comments === undefined ||
+				ls.viewers === undefined ||
+				ls.userImage === undefined
+			) {
+				// window.location.href = "forum.html";
+				console.log("gaonok");
+			} else {
+				if (replied === "") {
+					$('#reply').hide();
+					console.log('None');
+					$('#noReply-yet').removeClass('d-none');
+				}
+				document.title = theType + " | " + theProblem;
+				$('.myUserImage').attr('src', theImage);
+				$('#myUserName').text(theAuthor);
+				$('#myHeaderProblem').text(theProblem);
+				$('.myViewers').text(theViewers);
+				$('.myComments').text(theComments);
+				$('#repliedBy').text(replied);
+				if (replied === "madamarshanda@gmail.com") {
+					$('.myUserReplied').attr('src', '../img/user/icons.jpg');
+				}
+				if (replied === "maftuhANaufal@gmail.com") {
+					$('.myUserReplied').attr('src', '../img/user/iconn.jpg');
+				}
+				if (replied === "khusnul20032002@gmail.com") {
+					$('.myUserReplied').attr('src', '../img/user/user.jpg');
+				}
+				$('.myForumType').text(theType);
+				if ((theType === "Python") || (theType === "Iotonomous")) {
+					$('#myTypeForum').addClass('text-primary border-primary')
+				}
+				if (theType === "Arduino") {
+					$('#myTypeForum').addClass('text-info border-info')
+				}
+				if (theType === "Raspberry") {
+					$('#myTypeForum').addClass('text-danger border-danger')
+				}
+			}
+		</script>
+		<footer class="container-fluit footer py-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 my-4">
+							<div class="d-flex mb-2">
+								<img src="../img/content/favicon.png" class="footerIcon" width="43px" alt="">
+								<h3 class="ml-4">Iotonomous</h3>
+							</div>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem esse ullam quia illo labore
+								perspiciatis pariatur blanditiis laboriosam similique cum, laborum aperiam nihil amet itaque.
+							</p>
+							<div class="grWhite"> </div>
+							<div>
+								<p>
+									<i class="fas fa-envelope mr-3"></i> khusnul20032002@gmail.com
+								</p>
+							</div>
+							<div class="grWhite"></div>
+							<div>
+								<p>
+									<i class="fas fa-phone mr-3"></i> (+62)882-1726-2025
+								</p>
+							</div>
+							<div class="grWhite"></div>
+							<div>
+								<p>
+									<i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan, EastJava
+								</p>
+							</div>
+							<div class="grWhite"></div>
+						</div>
+						<div class="col-md-3 my-4">
+							<h5 class="mb-4">Useful Links</h5>
+							<div class="row">
+								<div class="col-8 link">
+									<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a></p>
+									<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Quick Guides</a></p>
+									<p><i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a></p>
+									<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Terms of Service</a></p>
+									<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Privacy Policy</a></p>
+									<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Send Feedback</a></p>
+								</div>
+								<div class="col-4 link">
+									<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a></p>
+									<p><i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a></p>
+									<p><i class="fas fa-angle-right mr-1"></i> <a href="#">News</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5 my-4">
+							<h6>
+								"Propel, propel, propel your craft softly down liquid solution. Ecstatically, ecstatically,
+								ecstatically, ecstatically,
+								existence is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
+							</h6>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="container-fluit endFooter p-3">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 pt-3">
+							Developed by <a href="#">Kodeberkah</a>
+						</div>
+						<div class="col-md-6 pt-3 text-center">
+							<div class="d-inline">
+								<div class="iconSocial">
+									<i class="fab fa-instagram"></i>
+								</div>
+								<div class="iconSocial">
+									<i class="fab fa-facebook"></i>
+								</div>
+								<div class="iconSocial">
+									<i class="fab fa-whatsapp"></i>
+								</div>
+								<div class="iconSocial">
+									<i class="fab fa-github"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</body>
+
+</html>
