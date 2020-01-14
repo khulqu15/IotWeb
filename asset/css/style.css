@@ -1,6 +1,73 @@
-body {
+html{
   overflow-x: hidden !important;
   /* height: 2000px; */
+}
+
+@font-face {
+  font-family: paraph;
+  src: url(../font/myFont/PublicSans-RegularP.ttf);
+}
+
+@font-face {
+  font-family: button;
+  src: url(../font/myFont/NotoSansTC-RegularB.otf);
+}
+
+@font-face {
+  font-family: heading;
+  src: url(../font/myFont/Ubuntu-RegularH.ttf);
+}
+
+button, a {
+  font-family: button !important;
+}
+p, input {
+  font-family: paraph;
+}
+
+h1, h2, h3, h4, h5, h6 , #brand-nav p{
+  font-family: heading !important;
+}
+
+button:hover, a:hover {
+  text-decoration: none;
+}
+
+.reviewStar svg:hover {
+  cursor: pointer;
+}
+
+#loadingku {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: block;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+}
+
+#loading-image {
+ position: absolute;
+ width: 4%;
+ height: auto;
+ top: 47%;
+ left: 48%;
+ z-index: 100;
+}
+
+@media only screen and (max-width : 700px) {
+  #loading-image {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    top: 39%;
+    left: 45%;
+    z-index: 100;
+   }
+   
 }
 
 nav {
@@ -14,6 +81,18 @@ nav {
   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
 }
 
+@media only screen and (max-width: 950px) {
+  #brand-nav div p {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  #brand-nav div p {
+    display: inline-block !important;
+  }
+}
+
 .nav-down {
   background-color: white;
   color: black;
@@ -25,7 +104,6 @@ nav {
   position: relative;
   margin: 15px 20px;
   left: 5%;
-  cursor: pointer;
 }
 
 #brand-nav p {
@@ -33,10 +111,12 @@ nav {
   position: relative;
   top: -8px;
   display: inline;
+  cursor: pointer;
 }
 
 #brand-nav img {
   display: inline;
+  cursor: pointer;
   position: relative;
   top: -10px;
 }
@@ -167,9 +247,10 @@ nav {
     display: none;
     position: fixed;
     left: 0px;
-    width: 40%;
+    width: 70%;
     height: 100%;
     top: 0;
+    padding-top: 13%;
     background-color: white;
     z-index: 900;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -207,7 +288,7 @@ nav {
   .active-nav::after {
     content: "";
     position: absolute;
-    width: 60%;
+    width: 40%;
     left: 0%;
     height: 4px;
     bottom: -3px;
@@ -215,7 +296,16 @@ nav {
     transition: all 0.3s;
   }
 }
+.bulidIconAbsolute {
+  transform: scale(2);
+  opacity: 0.3;
+  position: absolute;
+  left: 8%;
+}
 
+.btn-signin {
+  background-image: linear-gradient(to right #267cb6, #8bccf9);
+}
 .text-black {
   color: black !important;
 }
@@ -223,10 +313,11 @@ nav {
 .active-nav {
   color: #63addf !important;
   font-size: 15px;
+  font-weight: bold;
 }
 
 .overflowx {
-  overflow: hidden !important;
+  overflow-y: hidden !important;
 }
 
 #parallax1 {
@@ -344,8 +435,8 @@ nav {
   }
 
   #parallax1-img {
-    background-image: url("../img/content/surabaya.jpg");
-    width: 100%;
+    background-image: url("../img/content/arduino.jpg");
+    height: 100%;
     background-repeat: no-repeat;
     position: absolute;
   }
@@ -619,7 +710,7 @@ nav {
 }
 
 #content2 {
-  background-image: linear-gradient(to bottom right, #8be1f6, #176395);
+  background-image: linear-gradient(to bottom right, #52aaf1, #057dce) !important;
   color: white;
 }
 
@@ -674,7 +765,7 @@ nav {
 }
 
 .slick-slide {
-  margin: 0px 10px;
+  margin: 10px 10px;
 }
 
 .slick-next::before,
@@ -700,6 +791,90 @@ nav {
   width: 70%;
   z-index: 20;
   position: relative;
+}
+.projectCardImg {
+  background-color: black;
+  transition: all .3s;
+}
+.projectCardImg img {
+  transition: all .3s;
+  height: 100%;
+}
+@media only screen and (max-width: 767px) {
+  .projectCardImg img {
+    background-size: cover;
+  }
+}
+.projectCardText {
+  transition: all .3s;
+  top: 100px !important;
+  opacity: 0;
+}
+.projectCardImg:hover img {
+  opacity: 0.3;
+}
+.projectCardImg:hover .projectCardText {
+  top: 0px !important;
+  opacity: 1;
+}
+.projectCardImg:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4)
+}
+.myImgSlider {
+  width: 100%;
+}
+@media only screen and (max-width: 1006px) {
+  .myImgSlider {
+    height: 100%;
+    width: auto;
+  }
+}
+.projectCardText:hover .myLineShop {
+  width: 100px !important;
+}
+.projectCardText:hover .shopCategory {
+  right: 20px;
+  opacity: 1;
+}
+.projectCardText:hover .shopStar .myStar {
+  opacity: 1;
+  transform: rotate(0deg);
+  left: 0px;
+}
+.myStar {
+  transition: all .3s;
+  position: relative;
+  left: -30px;
+  transform: rotate(90deg);
+  opacity: 0;
+}
+.myStar:nth-child(1) {
+  transition-delay: .3s;
+}
+.myStar:nth-child(2) {
+  transition-delay: .24s;
+}
+.myStar:nth-child(3) {
+  transition-delay: .18s;
+}
+.myStar:nth-child(4) {
+  transition-delay: .12s;
+}
+.myStar:nth-child(5) {
+  transition-delay: .06s;
+}
+.myLineShop {
+  width: 0px;
+  height: 4px; 
+  background-color: white;
+  position: relative;
+  transition: all .4s;
+  transition-delay: .4s;
+}
+@media only screen and (max-width: 700px) {
+  .shopProject {
+    width: 100%;
+  }
 }
 
 .overlay {
@@ -729,6 +904,12 @@ nav {
 
 .API:hover {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+  padding-bottom: 40px !important;
+}
+.API:hover button {
+  bottom: 10px;
+  left: 31%;
 }
 
 .categoryAPI {
@@ -748,9 +929,15 @@ nav {
 
 .API button {
   position: absolute;
-  bottom: 3px;
-  left: 33%;
+  bottom: 10px;
+  left: 31%;
+  transition: all .3s;
 }
+
+.API button:hover {
+  transform: scale(1.05);
+}
+
 
 /* footer tua #1e2538 */
 /* footer muda #242c41 */
@@ -820,6 +1007,10 @@ nav {
 
 /* learn */
 
+.myIconDetailLearn {
+  position: relative;
+}
+
 .learnCard {
   width: 100%;
   height: 300px;
@@ -827,6 +1018,22 @@ nav {
   overflow: hidden;
   background-image: linear-gradient(to bottom right, #8be1f6, #176395);
   position: relative;
+}
+
+@media only screen and (max-width: 760px) {
+  .myIconDetailLearn {
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+  }
+  .myIconDetailLearn p {
+    margin: 20px 10px;
+    display: inline;
+  }
+  .myIconDetailLearn #like {
+    position: relative;
+  }
 }
 .learnCategory {
   top: 10px;
@@ -916,9 +1123,6 @@ nav {
 .myLearnDetail {
   transition: all .3s;
 }
-.myLearnDetail:hover {
-  background-color: rgba(109, 109, 109, 0.1);
-}
 .learnImgDetail, .learnCardDetail {
   transition: all .3s;
 }
@@ -929,9 +1133,47 @@ nav {
 .learnCardDetail:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
+.learnCardDetail:hover .myOpsionalCard {
+  color: white;
+}
+.bg-white {
+  background-color: white !important;
+}
+
 /* Forum */
 .myForumMenu {
   display: inline-block;
+}
+@media only screen and (max-width: 700px) {
+  .scrollSpyDetailForum {
+    display: none;
+  }
+  .useridentity {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .useridentity h4, .useridentity p {
+    margin: 7px 0px !important;
+  }
+}
+.identityName {
+  cursor: pointer;
+}
+.myComments {
+  transition: all ease-in .3s;
+  box-shadow: 0px 1px 2.5px rgba(0, 0, 0, 0.2);
+}
+.myComments:hover {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.listRepliedComments {
+  transition: all .3s;
+  background-color: white;
+}
+
+.listRepliedComments:hover {
+  background-color: rgba(207, 207, 207, 0.1);
 }
 
 .myForumMenu p {
@@ -1043,11 +1285,28 @@ nav {
 }
 
 .shopCategory {
-  left: 0;
   font-size: 0.8rem;
-  top: -21px;
+  top: 30px;
+  opacity: 0;
+  transition: all .3s;
+  transition-delay: .2s;
+  right: -60px;
 }
 
+@media only screen and (max-width: 700px) {
+  .shopReviewRespond {
+    padding-top: 50px !important;
+  }
+}
+
+.myOpsionalCard {
+  color: black;
+}
+.myOpsionalCard:hover button {
+  color: #057dce;
+  background-color: white;
+  border: none;
+}
 .myCardShop {
   transition: all 0.3s;
 }
@@ -1091,4 +1350,79 @@ nav {
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.menuUser {
+  width: 33%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.menuUser1 {
+  width: 25%;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.menuUser::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  background-color: #057dce;
+  height: 2px;
+  width: 0%;
+  left: 20%;
+  transition: all ease-in .2s;
+}
+
+.menuUser:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  background-color: #057dce;
+  height: 2px;
+  width: 60%;
+  left: 20%;
+  transition: all ease-in .3s;
+}
+
+.menuUser1::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  background-color: #057dce;
+  height: 2px;
+  width: 0%;
+  left: 20%;
+  transition: all ease-in .2s;
+}
+
+.menuUser1:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  background-color: #057dce;
+  height: 2px;
+  width: 60%;
+  left: 20%;
+  transition: all ease-in .3s;
+}
+
+
+
+
+.menuUserHover {
+  color: #057dce;
+}
+
+.menuUserHover::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  background-color: #057dce;
+  height: 2px;
+  width: 60%;
+  left: 20%;
+  transition: all ease-in .3s;
 }

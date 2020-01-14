@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Iotonomous - User</title>
+
+	<link rel="shortcut icon" href="../img/content/favicon.png" type="image/x-icon" />
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/all.min.css" />
+	<link rel="stylesheet" href="../css/aos.css" />
+	<link rel="stylesheet" href="../css/fontawesome.min.css" />
+	<link rel="stylesheet" href="../css/slick-theme.css" />
+	<link rel="stylesheet" href="../css/slick.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/all.min.js"></script>
+	<script src="../js/aos.js"></script>
+	<script src="../js/slick.min.js"></script>
+	<script src="../js/typeit.min.js"></script>
+	<script src="../js/script.js"></script>
+	<script src="../js/Chart.js"></script>
+</head>
+
+<body class="bg-light">
+
+    <div id="loadingku">
+        <img src="../img/content/loading.gif" alt="Loading..." id="loading-image">
+    </div>
+    <script>
+        $(window).ready(function() {
+            $('#loadingku').fadeOut(600);
+        });
+    </script>
+
+	<header>
+		<nav>
+            <div id="brand-nav" class="pt-1">
+                <img src="../img/content/favicon.png" width="30px" height="30px" alt="" onclick="window.location.href='../../index.html'">
+                <p style="font-size: 19px;" class="ml-2 text-dark" onclick="window.location.href='../../index.html'">Iotonomous</p>
+            </div>
+			<!-- 1e6795 Tua -->
+			<!-- 8bccf6 Muda -->
+			<div id="menu-nav">
+				<ul style="list-style: none;" id="ul-menu">
+					<li class="myMenu"><a class="text-dark" href="../../index.html">HOME</a></li>
+					<li class="myMenu">
+						<a class="text-dark" href="../page/learn.html">LEARN</a>
+					</li>
+					<li class="myMenu"><a class="text-dark" href="forum.html">FORUMS</a></li>
+					<li class="myMenu"><a href="shop.html" class="text-dark">SHOP</a></li>
+					<li class="myMenu"><a class="text-dark" target="_blank" href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">VIDEO</a></li>
+					<li id="btnLoginUser"><button class="btn btn-primary rounded-pill d-inline-block btn-sm px-4 position-relative"
+						style="top: -5px;" onclick="window.location.href='login.html'">Signin</button></li>
+					<li id="avatarUser" style="top: -3px;">
+						<img src="../img/user/icon.png" onclick="window.location.href='../admin/index.html'" width="30px" height="30px" alt="">
+					</li>
+				</ul>
+			</div>
+			<script>
+				$("#search-nav").on("click", function () {
+					if (this.hash !== "") {
+						event.preventDefault();
+						var hash = this.hash;
+						$("html, body").animate({
+								scrollTop: $(hash).offset().top
+							},
+							1000,
+							function () {
+								window.location.hash = hash;
+							}
+						);
+					}
+					$("#input-search").focus();
+				});
+			</script>
+			<div id="menu-toggle">
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<!-- <i class="fas fa-stream"></i> -->
+			</div>
+			<div id="menu-close">
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<div class="line bg-dark" style="background-color: black !important;"></div>
+				<!-- <i class="fas fa-times"></i> -->
+			</div>
+		</nav>
+	</header>
+    
+    <div class="container-fluid shadow-sm pb-0 mb-5 pt-3" style="background-color: white;">
+        <div class="row pt-5">
+            <div class="col-md-12 pt-5">
+                <div class="container">
+                    <div class="row pt-5">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <div class="d-inline-block">
+                                        <div class="overflow-hidden rounded-circle mb-3" style="width: 80px; height: 80px; background-color: white;">
+                                            <img src="../img/user/icon.png" style="height: 100%;" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 mb-4">
+                                    <div class="useridentity d-inline mt-1">
+                                        <h4 class="mb-0 mt-1 py-0">Mohammad Khusnul Khuluq</h4>
+                                        <p style="color: gray; font-size: .8rem;" class="py-0 my-0">Web Developer</p>
+                                        <p class="text-dark my-0 py-0" style="font-size: .8rem;">khusnul20032002@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div data-toggle="modal" data-target="#followedModal" style="cursor: pointer;">
+                                        <h1 class="my-0 py-0 followed">10</h1>
+                                        <p class="my-0 py-0" style="color: gray; font-size: .8rem;">Followed</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div data-toggle="modal" data-target="#followersModal" style="cursor: pointer;">
+                                        <h1 class="my-0 py-0" id="followers">10</h1>
+                                        <p class="my-0 py-0" style="color: gray; font-size: .8rem;">Followers</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn border border-primary my-3 followbtn px-4">Follow</button>
+                                    <script>
+                                        $('.followbtn').click(function() {
+                                            var x = document.getElementById('followers');
+                                            if(x.innerHTML === "10") {
+                                                x.innerHTML = "11";
+                                            } else {
+                                                x.innerHTML = "10";
+                                            }
+                                            $('.followbtn').toggleClass('btn-primary text-white');
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="followersModal" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="modal-title">Followers</div>
+                                    <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" style="overflow-y: auto; height: 550px;">
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="followedModal" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="modal-title">Followed</div>
+                                    <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" style="overflow-y: auto; height: 550px;">
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-lg listRepliedComments p-2 my-2">
+                                        <div class="d-flex">
+                                            <div class="overflow-hidden rounded-circle position-relative" style="width: 40px; height: 40px;">
+                                                <img class="d-inline" src="../img/user/user.jpg" height="100%" alt="">
+                                            </div>
+                                            <div class="d-inline ml-3">
+                                                <p class="d-inline my-0">Mohammad Khusnul Khuluq</p>
+                                                <p style="font-size: .7rem;" class="my-0">khusnul20032002@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="d-flex position-relative" style="width: 80%; left: 10%;">
+                                <div class="menuUser1 position-relative mx-2 pb-1" id="skillMenu">Skill</div>
+                                <div class="menuUser1 position-relative mx-2 pb-1 menuUserHover" id="detailMenu">Detail</div>
+                                <div class="menuUser1 position-relative mx-2 pb-1" id="ContentMenu">Content</div>
+                                <div class="menuUser1 position-relative mx-2 pb-1" id="SettingMenu">Setting</div>
+                            </div>
+                            <script>
+                                $('#skillMenu').click(function() {
+                                    $('#skillMenu').addClass('menuUserHover');
+                                    $('#detailMenu').removeClass('menuUserHover');
+                                    $('#ContentMenu').removeClass('menuUserHover');
+                                    $('#SettingMenu').removeClass('menuUserHover');
+                                    $('#DetailContent').hide(500);
+                                    $('#SkillContent').removeClass('d-none');
+                                    $('#SkillContent').show(500);
+                                    $('#ContentContent').hide(500);
+                                    $('#SettingContent').hide(500);
+                                });
+                                $('#detailMenu').click(function() {
+                                    $('#skillMenu').removeClass('menuUserHover');
+                                    $('#detailMenu').addClass('menuUserHover');
+                                    $('#ContentMenu').removeClass('menuUserHover');
+                                    $('#SettingMenu').removeClass('menuUserHover');
+                                    $('#DetailContent').show(500);
+                                    $('#SkillContent').hide(500);
+                                    $('#ContentContent').hide(500);
+                                    $('#SettingContent').hide(500);
+                                });
+                                $('#ContentMenu').click(function() {
+                                    $('#skillMenu').removeClass('menuUserHover');
+                                    $('#detailMenu').removeClass('menuUserHover');
+                                    $('#ContentMenu').addClass('menuUserHover');
+                                    $('#SettingMenu').removeClass('menuUserHover');
+                                    $('#DetailContent').hide(500);
+                                    $('#SkillContent').hide(500);
+                                    $('#ContentContent').removeClass('d-none')
+                                    $('#ContentContent').show(500);
+                                    $('#SettingContent').hide(500);
+                                });
+                                $('#SettingMenu').click(function() {
+                                    $('#skillMenu').removeClass('menuUserHover');
+                                    $('#detailMenu').removeClass('menuUserHover');
+                                    $('#ContentMenu').removeClass('menuUserHover');
+                                    $('#SettingMenu').addClass('menuUserHover');
+                                    $('#DetailContent').hide(500);
+                                    $('#SkillContent').hide(500);
+                                    $('#ContentContent').hide(500);
+                                    $('#SettingContent').removeClass('d-none');
+                                    $('#SettingContent').show(500);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-white rounded-lg mb-5 px-5 shadow-sm py-4 d-none" id="ContentContent">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="mb-4">Content User</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 my-3">
+                <div class="learnCard position-relative">
+                  <div class="mx-auto myFitur d-inline">
+                      <div class="d-inline w-100 position-absolute learnFitur">
+                        <div class="learnIcons d-inline-block learnIconHeart"><i class="far fa-heart"></i></div>
+                        <div class="learnIcons d-inline-block learnIconShare"><i class="fas fa-share"></i></div>
+                        <div class="learnIcons d-inline-block learnIconEye"><i class="fas fa-eye"></i></div>
+                      </div>
+                  </div>
+                  <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Advanced</div>
+                  <div class="position-absolute w-100 px-2 learnBody" id="learnBody1">
+                    <div class="row">
+                      <div class="col-12 myLearn">
+                          <h5 class="learnTitle">Pengukuran Arus Listrik Arduino Python</h5>
+                          <p style="font-size: .8rem;" class="learnDescription"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, consequatur.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    id="learnImg1"
+                    class="learnImg h-100"
+                    src="../img/content/guide2.jpg"
+                  />
+                
+                </div>
+              </div>
+              <div class="col-md-4 my-3">
+                <div class="learnCard position-relative">
+                   <div class="mx-auto myFitur d-inline">
+                      <div class="d-inline w-100 position-absolute learnFitur">
+                        <div class="learnIcons d-inline-block learnIconHeart"><i class="far fa-heart"></i></div>
+                        <div class="learnIcons d-inline-block learnIconShare"><i class="fas fa-share"></i></div>
+                        <div class="learnIcons d-inline-block learnIconEye"><i class="fas fa-eye"></i></div>
+                      </div>
+                  </div>
+                  <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Beginner</div>
+                  <div class="position-absolute w-100 px-2 learnBody" id="learnBody1">
+                    <div class="row">
+                      <div class="col-12 myLearn">
+                          <h5 class="learnTitle">Tips Perakitan Arduino</h5>
+                          <p style="font-size: .8rem;" class="learnDescription">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, consequatur.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    id="learnImg1"
+                    class="learnImg h-100"
+                    src="../img/content/shop2.jpg"
+                  />
+                
+                </div>
+              </div>
+
+              <div class="col-md-4 my-3">
+                <div class="learnCard position-relative">
+                  <div class="mx-auto myFitur d-inline">
+                      <div class="d-inline w-100 position-absolute learnFitur">
+                        <div class="learnIcons d-inline-block learnIconHeart"><i class="far fa-heart"></i></div>
+                        <div class="learnIcons d-inline-block learnIconShare"><i class="fas fa-share"></i></div>
+                        <div class="learnIcons d-inline-block learnIconEye"><i class="fas fa-eye"></i></div>
+                      </div>
+                  </div>
+                  <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Intermediate</div>
+                  <div class="position-absolute w-100 px-2 learnBody" id="learnBody1">
+                    <div class="row">
+                      <div class="col-12 myLearn">
+                          <h5 class="learnTitle">Impelemntasi Raspberry pada Arduino</h5>
+                          <p style="font-size: .8rem;" class="learnDescription">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, consequatur.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    id="learnImg1"
+                    class="learnImg h-100"
+                    src="../img/content/shop1.jpg"
+                  />
+                
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="container bg-white rounded-lg mb-5 px-5 shadow-sm py-4 d-none" id="SettingContent">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="mb-4">Detail User</h4>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="dataUser mt-2">
+                    <label class="labelData font-weight-bold mb-0" for="username">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="username" value="Mohammad Khusnul Khuluq">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser mt-2">
+                    <label class="labelData font-weight-bold mb-0" for="name">Username</label>
+                    <input type="text" class="form-control" id="name" value="Ninno">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser mt-2">
+                    <label class="labelData font-weight-bold mb-0" for="email">Email</label>
+                    <input type="email" class="form-control" id="email" value="khusnul20032002@gmail.com">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="dataUser mt-2">
+                    <label class="labelData font-weight-bold mb-0" for="sekolah">Asal Institusi</label>
+                    <input type="text" class="form-control" id="sekolah" value="SMKN 1 Purwosari">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser mt-2">
+                    <label class="labelData font-weight-bold mb-0" for="alamat">Alamat</label>
+                    <input type="text" class="form-control" id="alamat" value="Purwoari, Pasuruan, JawaTimur">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser mt-2">
+                    <label class="labelData font-weight-bold mb-0" for="tgl">Tanggal Lahir</label>
+                    <input type="date" class="form-control" id="tgl" value="2002-03-20">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="dataUser mt-2">
+                    <label class="labelData font-weight-bold mb-0" for="phone">No Handphone</label>
+                    <input type="date" class="form-control" id="phone" value="088217262025">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser mt-2">
+                    <label class="labelData font-weight-bold mb-0" for="skill">Keahlian</label>
+                    <input type="date" class="form-control" id="skill" value="Web and Mobile Programming">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 offset-md-9">
+                <div class="text-right">
+                    <button class="btn btn-primary rounded-sm shadow-sm px-5">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container bg-white rounded-lg mb-5 px-5 shadow-sm py-4" id="DetailContent">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="mb-4">Setting</h4>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="dataUser border-bottom mt-2">
+                    <div class="labelData font-weight-bold mb-0">Nama Lengkap</div>
+                    <p class="mt-0 pt-0 mb-1">Mohammad Khusnul Khuluq</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser border-bottom mt-2">
+                    <div class="labelData font-weight-bold mb-0">Username</div>
+                    <p class="mt-0 pt-0 mb-1">Ninno</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser border-bottom mt-2">
+                    <div class="labelData font-weight-bold mb-0">Email</div>
+                    <p class="mt-0 pt-0 mb-1">khusnul20032002@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="dataUser border-bottom mt-2">
+                    <div class="labelData font-weight-bold mb-0">Asal Institusi</div>
+                    <p class="mt-0 pt-0 mb-1">SMKN 1 Purwosari</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser border-bottom mt-2">
+                    <div class="labelData font-weight-bold mb-0">Alamat</div>
+                    <p class="mt-0 pt-0 mb-1">Purwoari, Pasuruan, JawaTimur</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser border-bottom mt-2">
+                    <div class="labelData font-weight-bold mb-0">Tanggal Lahir</div>
+                    <p class="mt-0 pt-0 mb-1">20 Maret 2002</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="dataUser border-bottom mt-2">
+                    <div class="labelData font-weight-bold mb-0">No Handphone</div>
+                    <p class="mt-0 pt-0 mb-1">088217262025</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dataUser border-bottom mt-2">
+                    <div class="labelData font-weight-bold mb-0">Keahlian</div>
+                    <p class="mt-0 pt-0 mb-1">Web and Mobile Programming</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container bg-white rounded-lg mb-5 px-5 shadow-sm py-4 d-none" id="SkillContent">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="mb-4">Skill User</h4>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 my-3">
+                <h6 class="text-center">Web Development</h6>
+                <canvas id="myChart"></canvas>
+                    <script>
+                        var ctx = document.getElementById('myChart').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            type: 'radar',
+                            data: {
+                                labels: ['HTML', 'CSS', 'JAVASCRIPT', 'PHP', 'SQL', 'Python'],
+                                datasets: [{
+                                        label: 'Web Development',
+                                        backgroundColor: 'rgba(23, 99, 149, 0.3)',
+                                        borderColor: 'rgb(23, 99, 149)',
+                                        borderWidth: 2,
+                                        data: [100, 90, 80, 87, 92, 65]
+                                    },
+                                ]
+                            },
+                            options: {}
+                        });
+                    </script>
+            </div>
+
+            <div class="col-md-6 my-3">
+                <h6 class="text-center">Mobile Development</h6>
+                <canvas id="myChart1"></canvas>
+                    <script>
+                        var ctx = document.getElementById('myChart1').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            type: 'radar',
+                            data: {
+                                labels: ['XML', 'JAVA', 'KOTLIN', 'FIREBASE', 'RETROFIT', 'SQL'],
+                                datasets: [{
+                                    
+                                        label: 'API Management',
+                                        backgroundColor: 'rgba(139, 225, 246, 0.3)',
+                                        borderColor: 'rgb(139, 225, 246)',
+                                        borderWidth: 2,
+                                        data: [100, 87, 94, 92, 83, 92]
+                                    }
+                                ]
+                            },
+                            options: {}
+                        });
+                    </script>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3 my-3">
+                <h6 class="text-center">Elektronik Development</h6>
+                <canvas id="myChart3"></canvas>
+                    <script>
+                        var ctx = document.getElementById('myChart3').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            type: 'radar',
+                            data: {
+                                labels: ['ARDUINO', 'PCB', 'RASPI', 'PIXHAWK', 'PYTHON', 'LISTRIK'],
+                                datasets: [{
+                                    
+                                        label: 'API Management',
+                                        backgroundColor: 'rgba(255, 157, 0, 0.3)',
+                                        borderColor: 'rgb(255, 157, 0)',
+                                        borderWidth: 2,
+                                        data: [98, 100, 92, 82, 93, 85]
+                                    }
+                                ]
+                            },
+                            options: {}
+                        });
+                    </script>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer class="container-fluit footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 my-4">
+                    <div class="d-flex mb-2">
+                        <img src="../img/content/favicon.png" class="footerIcon" width="43px" height="40px" alt="">
+                        <h3 class="ml-4">Iotonomous</h3>
+                    </div>
+                    <p style="font-size: .8rem;">Pengembang project IoT berbasis Website
+                    </p>
+                    <div style="font-size: .8rem;">
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> khusnul20032002@gmail.com
+                        </p>
+                    </div>
+                    <div style="font-size: .8rem;">
+                        <p>
+                            <i class="fas fa-phone mr-3"></i> (+62)882-1726-2025
+                        </p>
+                    </div>
+                    <div style="font-size: .8rem;">
+                        <p>
+                            <i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan, EastJava
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 my-4">
+                    <h5 class="mb-4">Useful Links</h5>
+                    <div class="row" style="font-size: .8rem;">
+                        <div class="col-6 link">
+                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a></p>
+                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Quick Guides</a></p>
+                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a></p>
+                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Terms of Service</a></p>
+                        </div>
+                        <div class="col-6 link">
+                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Send Feedback</a></p>
+                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a></p>
+                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a></p>
+                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">News</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 my-4 position-relative">
+                    <i class="fas fa-quote-left position-absolute" style="font-size: 6rem; top: 0; left: 10px; opacity: .15;"></i>
+                    <h6 class="my-5 py-3">
+                        "Propel, propel, propel your craft softly down liquid solution. Ecstatically, ecstatically,
+                        ecstatically, ecstatically,
+                        existence is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="container-fluit endFooter p-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 pt-3">
+                        Developed by <a href="#">Kodeberkah <img src="../img/content/Kodebekah-Logo.png" width="30px" height="30px" alt=""></a>
+                    </div>
+                    <div class="col-md-6 pt-3 text-center">
+                        <div class="d-inline">
+                            <div class="iconSocial">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="iconSocial">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                            <div class="iconSocial">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="iconSocial">
+                                <i class="fab fa-github"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+<script>
+$(document).ready(function() {
+    $('.learnIconEye').click(function() {
+    var title = $(this).parents('.learnCard').find('.learnTitle').text();
+    var description = $(this).parents('.learnCard').find('.learnDescription').text();
+    var category = $(this).parents('.learnCard').find('.learnCategory').text();
+    localStorage.setItem('learnTitle', title);
+    localStorage.setItem('learnDescription', description);
+    localStorage.setItem('learnCategory', category);
+    window.location.href = 'detaillearn.html';
+    });
+});
+</script>

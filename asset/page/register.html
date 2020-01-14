@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Iotonomous - Signin</title>
+    <title>Iotonomous - Register</title>
 
     <link rel="shortcut icon" href="../img/content/favicon.png" type="image/x-icon" />
 
@@ -29,73 +29,48 @@
 </head>
 <body>
 
-        <header>
-                <nav>
-                    <div id="brand-nav">
-                        <div onclick="document.location.href='index.html'" class="pt-1">
-                            <img src="../img/content/favicon.png" width="40px" alt="" />
-                            <p style="font-size: 19px;" class="ml-2 text-dark">Iotonomous</p>
-                        </div>
-                    </div>
-                    <!-- 1e6795 Tua -->
-                    <!-- 8bccf6 Muda -->
-                    <div id="menu-nav">
-                        <ul style="list-style: none;" id="ul-menu">
-                            <li class="myMenu"><a class="text-dark" href="../../index.html">HOME</a></li>
-                            <li class="myMenu">
-                                <a class="text-dark" href="../page/learn.html">LEARN</a>
-                            </li>
-                            <li class="myMenu"><a class="text-dark" href="forum.html">FORUMS</a></li>
-                            <li class="myMenu"><a href="shop.html" class="active-nav">SHOP</a></li>
-                            <li class="myMenu"><a class="text-dark" href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
-                    
-                            <li id="settingsClose" style="display: none;">
-                                <i class="fas fa-times"></i>
-                            </li>
-                        </ul>
-                    </div>
-                    <script>
-                        $("#search-nav").on("click", function () {
-                            if (this.hash !== "") {
-                                event.preventDefault();
-                                var hash = this.hash;
-                                $("html, body").animate({
-                                        scrollTop: $(hash).offset().top
-                                    },
-                                    1000,
-                                    function () {
-                                        window.location.hash = hash;
-                                    }
-                                );
-                            }
-                            $("#input-search").focus();
-                        });
-                    </script>
-                    <div id="menu-toggle">
-                        <div class="line bg-dark" style="background-color: black !important;"></div>
-                        <div class="line bg-dark" style="background-color: black !important;"></div>
-                        <div class="line bg-dark" style="background-color: black !important;"></div>
-                        <!-- <i class="fas fa-stream"></i> -->
-                    </div>
-                    <div id="menu-close">
-                        <div class="line bg-dark" style="background-color: black !important;"></div>
-                        <div class="line bg-dark" style="background-color: black !important;"></div>
-                        <!-- <i class="fas fa-times"></i> -->
-                    </div>
-                </nav>
-            </header>
-            
+    <div id="loadingku">
+        <img src="../img/content/loading.gif" alt="Loading..." id="loading-image">
+    </div>
+    <script>
+        $(window).ready(function() {
+            $('#loadingku').fadeOut(600);
+        });
+    </script>
+
+    <header>
+        <div id="brand-nav" class="w-100 text-center mx-0" style="left: 0 !important;">
+            <div class="pt-1 pt-4">
+                <img src="../img/content/favicon.png" width="25px" height="25px" alt="" onclick="document.location.href='../../index.html'"/>
+                <p style="font-size: 19px;" class="ml-2 text-dark" onclick="document.location.href='../../index.html'">Iotonomous</p>
+            </div>
+        </div>
+    </header>            
     
     <div class="container my-5">
-        <div class="row px-0 mx-0 py-5">
-            <div class="col-lg-6 mx-0 px-5 bg-primary rounded-left shadow py-5">
-                <div class="pt-5 mt-5">
-                    <p class="px-4 py-5 my-5 text-white font-weight-bold">The best way to shop with Adafruit is to create an account which allows you to shop faster, track the status of your current orders, review your previous orders and take advantage of our other member benefits.</p>
+        <div class="row px-0 mx-0 py-2">
+            <div class="col-lg-6 mx-0 px-5 bg-primary overflow-hidden position-relative rounded-left shadow py-5">
+                <img src="../img/content/arduino.jpg" class="position-absolute" style="background-attachment: fixed; left: 0; top: 0; opacity: .3" alt="">
+                <img src="../img/components/circle.png" alt="" width="200px" style="top: -20px; right: -100px; z-index: 10;" class="position-absolute">
+                <img src="../img/components/circle.png" alt="" width="200px" style="top: -20px; right: -100px; opacity: 0.4; transform: scale(1.7); z-index: 10;" class="position-absolute">
+                <img src="../img/components/circle.png" alt="" width="200px" style="bottom: -20px; left: -100px; z-index: 10;" class="position-absolute">
+                <img src="../img/components/circle.png" alt="" width="200px" style="bottom: -20px; left: -100px; opacity: 0.4; transform: scale(1.7); z-index: 10;" class="position-absolute">
+                <div class="py-5 position-relative">
+                    <div class="px-4 py-5 text-white text-center">
+                        <img src="../img/content/favicon.png" class="my-4" width="150px" alt="">
+                        <h3 class="font-weight-bold">IOTONOMOUS</h3>
+                        <p class="">Your Iotonomous account grants you access to all of Adafruit, including the shop, learning system, and forums.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mx-0 px-5 shadow rounded-right pt-5 pb-4">
+            </div>  
+            <div class="col-lg-6 px-2 shadow overflow-hidden rounded-right pt-2 pb-4">
+                <img src="../img/components/semicirclegray.png" alt="" width="200px" style="top: -50px; right: -120px; z-index: 10;" class="position-absolute">
+                <img src="../img/components/semicirclegray.png" alt="" width="200px" style="top: -50px; right: -120px; z-index: 10; opacity: .4 ; transform: scale(2);" class="position-absolute">
+                
                 <div class="pt-4 px-5">
-                    <h4 class="mb-3">Register</h4>
+                    <div class="position-relative mb-5 my-title">
+                        <h4 class="judul">Register</h4>
+                    </div>
                     <form action="login.html" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -120,13 +95,19 @@
                     </form>
                         <hr>
                         <div class="text-center mb-0">
-                            <span>Sudah mempunyai akun <button class="btn btn-light px-4 mx-2" onclick="window.location.href='login.html'">Login</button></span>
+                            <span>Sudah mempunyai akun <button class="btn border border-primary btn-light px-4 mx-2" onclick="window.location.href='login.html'">Login</button></span>
                         </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="text-center w-100">
+        <p><i class="fas fa-tools text-primary"></i> Developed by <b>KodeBerkah</b> <i class="fas fa-heart text-danger"></i></p>
+    </div>
+
     <script>
+        $('input').attr('autocomplete', 'off');
         $('.btn-register').click(function () {
             let name = $('#name').val(),
                 email = $('#email').val(),

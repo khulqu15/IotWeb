@@ -30,15 +30,21 @@
     <script src="../js/script.js"></script>
     <script src="../js/Chart.js"></script>
   </head>
-  <body>
+  <body style="overflow-x: hidden;">
+      <div id="loadingku">
+          <img src="../img/content/loading.gif" alt="Loading..." id="loading-image">
+      </div>
+      <script>
+          $(window).ready(function() {
+              $('#loadingku').fadeOut(600);
+          });
+      </script>
     <header>
       <nav>
-        <div id="brand-nav">
-          <div onclick="document.location.href='index.html'" class="pt-1">
-            <img src="../img/content/favicon.png" width="40px" alt="" />
-            <p style="font-size: 19px;" class="ml-2">Iotonomous</p>
-          </div>
-        </div>
+        <div id="brand-nav" class="pt-1">
+          <img src="../img/content/favicon.png" width="30px" height="30px" alt="" onclick="window.location.href='../../index.html'">
+          <p style="font-size: 19px;" class="ml-2" onclick="window.location.href='../../index.html'">Iotonomous</p>
+      </div>
         <!-- 1e6795 Tua -->
         <!-- 8bccf6 Muda -->
         <div id="menu-nav">
@@ -49,18 +55,11 @@
             </li>
             <li class="myMenu"><a href="forum.html">FORUMS</a></li>
             <li class="myMenu"><a href="shop.html">SHOP</a></li>
-            <li class="myMenu"><a href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
-            <li id="settingsNav">
-              <button
-                class="btn btn-primary d-inline-block btn-sm px-4 position-relative"
-                style="top: -5px;"
-                onclick="window.location.href='../page/login.html'"
-              >
-                Signin
-              </button>
-            </li>
-            <li id="settingsClose" style="display: none;">
-              <i class="fas fa-times"></i>
+            <li class="myMenu"><a target="_blank" href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">VIDEO</a></li>
+            <li id="btnLoginUser"><button class="btn btn-primary rounded-pill d-inline-block btn-sm px-4 position-relative"
+              style="top: -5px;" onclick="window.location.href='login.html'">Signin</button></li>
+            <li id="avatarUser" style="top: -3px;">
+              <img src="../img/user/icon.png" onclick="window.location.href='../admin/index.html'" width="30px" height="30px" alt="">
             </li>
           </ul>
         </div>
@@ -96,9 +95,9 @@
       </nav>
     </header>
 
-    <div class="container-fluit parallax py-5">
+    <div class="container-fluit parallax py-5" style="background-image: url('../img/content/bannerlearn.jpg'); background-size: cover; background-attachment: fixed;">
       <div class="row pt-5">
-        <div class="col-md-5 offset-md-1 py-5">
+        <div class="col-md-5 my-5 offset-md-1 pt-5 pb-4 rounded-lg" style="background-color: rgba(0, 0, 0, 0.4);">
           <div class="px-3 text-white">
             <h5>
               Learn how to make the world progress to industry 4.0 by making the
@@ -110,7 +109,39 @@
       </div>
     </div>
 
-    <div class="container-fluit">
+    <div class="modal fade" id="newGuides" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h5>New Guides</h5>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control border border-dark" name="email" id="email" aria-describedby="emailHelpId" placeholder="Enter Email">
+               </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control border border-dark" name="subject" id="subject" placeholder="Enter Subject">
+              </div>
+              <label for="isi">Description</label>
+              <textarea name="isi" id="isi" style="width: 100%;" rows="5" class="rounded-lg border border-dark"></textarea>
+              <div class="text-right">
+                <button class="btn btn-primary px-4 my-3">Create New Guides</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluit w-100" style="overflow-x: hidden !important;">
       <!-- <div class="row">
         <div class="col-md-12 ml-4 mt-4">
           <h1>Iotonomous</h1>
@@ -118,12 +149,16 @@
         </div>
       </div> -->
       <div class="row mt-4">
-        <div class="col-lg-3 my-3 pl-5 learnFilter">
-          <div class="position-sticky" style="top: 100px;">
-              <h3 class="px-3 mb-4">Filter</h3>
-              <div class="btn-group mx-2 rounded-pill shadow" role="group" aria-label="Choose">
-                <button style="font-size: .84rem;" class="btn btn-primary active px-4">Explore & Learn</button>
-                <button style="font-size: .84rem;" class="btn btn-primary px-4">New Guides</button>
+        <div class="col-lg-3 pl-5 learnFilter">
+          <div class="position-sticky" style="top: 40px;">
+              <div class="text-left">
+                <h3 class="px-3 mb-4">Filter</h3>
+              </div>
+              <div class="text-center">
+                <div class="btn-group mx-auto rounded-pill shadow w-100" role="group" aria-label="Choose">
+                  <button style="font-size: .84rem;" class="btn btn-primary active px-4 py-2 mx-0">Explore & Learn</button>
+                  <button style="font-size: .84rem;" class="btn btn-primary px-4 py-2 mx-0" data-toggle="modal" data-target="#newGuides">New Guides</button>
+                </div>
               </div>
               <div class="mx-2">
                 <div class="input-group mt-4 mb-3">
@@ -172,19 +207,19 @@
                       <div class="learnIcons d-inline-block learnIconEye"><i class="fas fa-eye"></i></div>
                     </div>
                 </div>
-                <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Intermediate</div>
+                <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Beginner</div>
                 <div class="position-absolute w-100 px-2 learnBody" id="learnBody1">
                   <div class="row">
                     <div class="col-12 myLearn">
-                        <h5 class="learnTitle">Impelemntasi Raspberry pada Arduino</h5>
-                        <p style="font-size: .8rem;" class="learnDescription">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, consequatur.</p>
+                        <h6 class="learnTitle">PyPortal IoT Data Logger with Analog Devices ADT7410, CircuitPython</h6>
+                        <p style="font-size: .8rem;" class="learnDescription">Using the Analog Devices ADT7410 and CircuitPython to create an IoT Temperature logger</p>
                     </div>
                   </div>
                 </div>
                 <img
                   id="learnImg1"
                   class="learnImg h-100"
-                  src="../img/content/shop1.jpg"
+                  src="../img/content/learn/content1_3.jpeg"
                 />
               
               </div>
@@ -202,15 +237,15 @@
                   <div class="position-absolute w-100 px-2 learnBody" id="learnBody1">
                     <div class="row">
                       <div class="col-12 myLearn">
-                          <h5 class="learnTitle">Pengukuran Arus Listrik Arduino Python</h5>
-                          <p style="font-size: .8rem;" class="learnDescription"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, consequatur.</p>
+                          <h6 class="learnTitle">ESP8266 WiFi Weather Station with Color TFT Display</h6>
+                          <p style="font-size: .8rem;" class="learnDescription">We Can Easy to Build a Weather Station with ESP8266 Wifi Microcontroller</p>
                       </div>
                     </div>
                   </div>
                   <img
                     id="learnImg1"
                     class="learnImg h-100"
-                    src="../img/content/guide2.jpg"
+                    src="../img/content/learn/content3_4.jpg"
                   />
                 
                 </div>
@@ -224,19 +259,19 @@
                           <div class="learnIcons d-inline-block learnIconEye"><i class="fas fa-eye"></i></div>
                         </div>
                     </div>
-                    <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Beginner</div>
+                    <div class="learnCategory border rounded-pill position-absolute text-white px-3 py-1">Intermediate</div>
                     <div class="position-absolute w-100 px-2 learnBody" id="learnBody1">
                       <div class="row">
                         <div class="col-12 myLearn">
-                            <h5 class="learnTitle">Tips Perakitan Arduino</h5>
-                            <p style="font-size: .8rem;" class="learnDescription">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, consequatur.</p>
+                            <h6 class="learnTitle">Raspberry Pi Wifi-Controlled Cat Laser Toy</h6>
+                            <p style="font-size: .8rem;" class="learnDescription">Make your own telepresence cat toy, perfect for exercising/torturing your favorite feline</p>
                         </div>
                       </div>
                     </div>
                     <img
                       id="learnImg1"
                       class="learnImg h-100"
-                      src="../img/content/shop2.jpg"
+                      src="../img/content/learn/content2_1.jpg"
                     />
                   
                   </div>
@@ -250,83 +285,50 @@
         <div class="row">
           <div class="col-md-4 my-4">
             <div class="d-flex mb-2">
-              <img
-                src="../img/content/favicon.png"
-                class="footerIcon"
-                width="43px"
-                alt=""
-              />
+              <img src="../img/content/favicon.png" class="footerIcon" width="43px" height="40px" alt="">
               <h3 class="ml-4">Iotonomous</h3>
             </div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem
-              esse ullam quia illo labore perspiciatis pariatur blanditiis
-              laboriosam similique cum, laborum aperiam nihil amet itaque.
+            <p style="font-size: .8rem;">Pengembang project IoT berbasis Website
             </p>
-            <div class="grWhite"></div>
-            <div>
+            <div style="font-size: .8rem;">
               <p>
                 <i class="fas fa-envelope mr-3"></i> khusnul20032002@gmail.com
               </p>
             </div>
-            <div class="grWhite"></div>
-            <div>
-              <p><i class="fas fa-phone mr-3"></i> (+62)882-1726-2025</p>
-            </div>
-            <div class="grWhite"></div>
-            <div>
+            <div style="font-size: .8rem;">
               <p>
-                <i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan,
-                EastJava
+                <i class="fas fa-phone mr-3"></i> (+62)882-1726-2025
               </p>
             </div>
-            <div class="grWhite"></div>
+            <div style="font-size: .8rem;">
+              <p>
+                <i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan, EastJava
+              </p>
+            </div>
           </div>
           <div class="col-md-3 my-4">
             <h5 class="mb-4">Useful Links</h5>
-            <div class="row">
-              <div class="col-8 link">
-                <p>
-                  <i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a>
-                </p>
-                <p>
-                  <i class="fas fa-angle-right mr-1"></i>
-                  <a href="#">Quick Guides</a>
-                </p>
-                <p>
-                  <i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a>
-                </p>
-                <p>
-                  <i class="fas fa-angle-right mr-1"></i>
-                  <a href="#">Terms of Service</a>
-                </p>
-                <p>
-                  <i class="fas fa-angle-right mr-1"></i>
-                  <a href="#">Privacy Policy</a>
-                </p>
-                <p>
-                  <i class="fas fa-angle-right mr-1"></i>
-                  <a href="#">Send Feedback</a>
-                </p>
+            <div class="row" style="font-size: .8rem;">
+              <div class="col-6 link">
+                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a></p>
+                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Quick Guides</a></p>
+                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a></p>
+                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Terms of Service</a></p>
               </div>
-              <div class="col-4 link">
-                <p>
-                  <i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a>
-                </p>
-                <p>
-                  <i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a>
-                </p>
-                <p>
-                  <i class="fas fa-angle-right mr-1"></i> <a href="#">News</a>
-                </p>
+              <div class="col-6 link">
+                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Send Feedback</a></p>
+                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a></p>
+                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a></p>
+                <p><i class="fas fa-angle-right mr-1"></i> <a href="#">News</a></p>
               </div>
             </div>
           </div>
-          <div class="col-md-5 my-4">
-            <h6>
-              "Propel, propel, propel your craft softly down liquid solution.
-              Ecstatically, ecstatically, ecstatically, ecstatically, existence
-              is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
+          <div class="col-md-5 my-4 position-relative">
+            <i class="fas fa-quote-left position-absolute" style="font-size: 6rem; top: 0; left: 10px; opacity: .15;"></i>
+            <h6 class="my-5 py-3">
+              "Propel, propel, propel your craft softly down liquid solution. Ecstatically, ecstatically,
+              ecstatically, ecstatically,
+              existence is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
             </h6>
           </div>
         </div>
@@ -336,7 +338,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 pt-3">
-            Developed by <a href="#">Kodeberkah</a>
+            Developed by <a href="#">Kodeberkah <img src="../img/content/Kodebekah-Logo.png" width="30px" height="30px" alt=""></a>
           </div>
           <div class="col-md-6 pt-3 text-center">
             <div class="d-inline">

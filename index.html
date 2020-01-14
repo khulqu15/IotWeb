@@ -32,11 +32,9 @@
 
     <header>
         <nav>
-            <div id="brand-nav">
-                <div onclick="document.location.href='index.html'" class="pt-1">
-                    <img src="asset/img/content/favicon.png" width="40px" alt="">
-                    <p style="font-size: 19px;" class="ml-2">Iotonomous</p>
-                </div>
+            <div id="brand-nav" class="pt-1">
+                <img src="asset/img/content/favicon.png" width="30px" height="30px" alt="" onclick="window.location.href='index.html'">
+                <p style="font-size: 19px;" class="ml-2" onclick="window.location.href='index.html'">Iotonomous</p>
             </div>
             <!-- 1e6795 Tua -->
             <!-- 8bccf6 Muda -->
@@ -46,10 +44,12 @@
                     <li class="myMenu"><a href="asset/page/learn.html">LEARN</a></li>
                     <li class="myMenu"><a href="asset/page/forum.html">FORUMS</a></li>
                     <li class="myMenu"><a href="asset/page/shop.html">SHOP</a></li>
-                    <li class="myMenu"><a href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">GALLERY</a></li>
-                    <li id="settingsNav"><button class="btn btn-primary d-inline-block btn-sm px-4 position-relative"
+                    <li class="myMenu"><a target="_blank" href="https://www.youtube.com/channel/UCokikzP1g1UBdL189yi3blg?view_as=subscriber">VIDEO</a></li>
+                    <li id="btnLoginUser"><button class="btn btn-primary rounded-pill d-inline-block btn-sm px-4 position-relative"
                             style="top: -5px;" onclick="window.location.href='asset/page/login.html'">Signin</button></li>
-                    <li id="settingsClose" style="display: none;"><i class="fas fa-times"></i></li>
+                    <li id="avatarUser" style="top: -3px;">
+                        <img src="asset/img/user/icon.png" onclick="window.location.href='asset/admin/index.html'" width="30px" height="30px" alt="">
+                    </li>
                 </ul>
             </div>
             <script>
@@ -80,6 +80,15 @@
         </nav>
     </header>
 
+    <div id="loadingku">
+        <img src="asset/img/content/loading.gif" alt="Loading..." id="loading-image">
+    </div>
+    <script>
+        $(window).ready(function() {
+            $('#loadingku').fadeOut(600);
+        });
+    </script>
+
     <div id="parallax1">
         <div id="parallax1-img"></div>
         <!-- <img id="parallax-objek1" src="asset/img/content/arduinoRealIcon.png" alt=""> -->
@@ -103,28 +112,25 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-6 text-center">
-                        <img class="myTools" src="asset/img/content/Iotonomous.png" class="d-inline-block" width="30%"
-                            alt="">
+                        <img class="myTools" src="asset/img/content/Iotonomous.png" width="30%" data-toggle="tooltip" data-placement="left" title="Iotonomous" alt="">
                     </div>
                     <div class="col-6 text-center pt-3">
-                        <img class="myTools" src="asset/img/content/python.png" class="d-inline-block" width="20%"
-                            alt="">
+                        <img class="myTools" src="asset/img/content/python.png" width="20%" data-toggle="tooltip" data-placement="left" title="Python Programming" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-6 text-center">
-                        <img class="myTools" src="asset/img/content/pi.png" class="d-inline-block pt-3" width="25%"
-                            alt="">
+                        <img class="myTools mt-3" src="asset/img/content/pi.png" width="15%" data-toggle="tooltip" data-placement="left" title="Raspberry PI" alt="">
                     </div>
                     <div class="col-6 text-center">
-                        <img class="myTools mt-2" src="asset/img/content/Arduino.png" class="d-inline-block pt-4"
-                            width="25%" alt="">
+                        <img class="myTools mt-3" src="asset/img/content/Arduino.png" width="25%" data-toggle="tooltip" data-placement="left" title="Arduino" alt="">
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="container py-5 position-relative">
             <div class="row">
                 <div class="col-lg-6 px-4 pb-5">
@@ -173,65 +179,108 @@
         <!-- <img src="asset/img/components/cloudCustomGreen.png" width="100%" alt=""> -->
     </div>
 
-    <div class="container-fluit px-4 py-5" id="content2">
-        <h3 class="text-center">Built from the ground up to be <u>easy to use.</u></h3>
+    <div class="container-fluit px-4 py-5 position-relative" id="content2">
+        <img src="asset/img/components/cloudWhite1.png" class="position-absolute" width="101%" style="left: 0; top: -1px;" alt="">
+        <div class="pt-5 mt-4">
+            <h3 class="text-center mt-5 pt-5">Built from the ground up to be <u>easy to use.</u></h3>        
+        </div>
         <p class="text-center">We do the hard work so you can focus on <b>the fun stuff.</b></p>
         <div class="row py-5">
             <div class="col-lg-6" id="built">
-                <div class="builtCarousel p-3">
-                    <i class="fas fa-hands mb-3"></i>
-                    <h4>It's Your Data</h4>
-                    <p>The data you store with IO is yours to manage and control. You can download it all anytime and we
-                        will never sell or
-                        give it away to another company. We feel strongly enough about this that we put it in our IoT
-                        Bill of Rights.</p>
+                
+                <div class="builtCarousel">
+                    <div class="bg-primary">
+                        <div class="px-4">
+                            <i class="fas fa-hands my-3 text-white"></i>
+                            <i class="fas fa-hands my-3 text-white bulidIconAbsolute"></i>
+                        </div>
+                    </div>
+                    <div class="px-4 pt-3">
+                        <h4>It's Your Data</h4>
+                        <p>The data you store with IO is yours to manage and control. You can download it all anytime and we
+                            will never sell or
+                            give it away to another company. We feel strongly enough about this that we put it in our IoT
+                            Bill of Rights.</p>
+                    </div>
                 </div>
-                <div class="builtCarousel p-3">
-                    <i class="fas fa-dumbbell mb-3"></i>
-                    <h4>Powerful API</h4>
-                    <p>
-                        The same API that drives our user interface is available to you. We provide documentation so you
-                        can build a library in
-                        your favorite language to talk to IO, or use one of ours.
-                    </p>
+                <div class="builtCarousel">
+                    <div class="bg-primary">
+                        <div class="px-4">
+                            <i class="fas fa-dumbbell my-3 text-white"></i>
+                            <i class="fas fa-dumbbell my-3 text-white bulidIconAbsolute"></i>
+                        </div>
+                    </div>
+                    <div class="px-4 pt-3">
+                        <h4>Powerful API</h4>
+                        <p>The same API that drives our user interface is available to you. We provide documentation so you
+                            can build a library in your favorite language to talk to IO, or use one of ours.</p>
+                    </div>
                 </div>
-                <div class="builtCarousel p-3">
-                    <i class="fas fa-fan mb-3"></i>
-                    <h4>Beautiful Dashboards</h4>
-                    <p>
-                        Data won't help you make better decisions or understand the world you're living in unless you
-                        can see it. Charts,
-                        graphs, gauges, logging, and more are availble from anywhere in our carefully designed web-based
-                        dashboards.
-                    </p>
+                <div class="builtCarousel">
+                    <div class="bg-primary">
+                        <div class="px-4">
+                            <i class="fas fa-fan my-3 text-white"></i>
+                            <i class="fas fa-fan my-3 text-white bulidIconAbsolute"></i>
+                        </div>
+                    </div>
+                    <div class="px-4 pt-3">
+                        <h4>Beautiful Dashboards</h4>
+                        <p>
+                            Data won't help you make better decisions or understand the world you're living in unless you
+                            can see it. Charts,
+                            graphs, gauges, logging, and more are availble from anywhere in our carefully designed web-based
+                            dashboards.
+                        </p>
+                    </div>
                 </div>
-                <div class="builtCarousel p-3">
-                    <i class="fas fa-brain mb-3"></i>
-                    <h4>Triggers</h4>
-                    <p>
-                        Keep yourself and your systems up to date by automatically responding to changes. Triggers
-                        monitor your data to notify
-                        you when your temperature sensor gets too hot or when your DIY security system goes offline.
-                    </p>
+                <div class="builtCarousel">
+                    <div class="bg-primary">
+                        <div class="px-4">
+                            <i class="fas fa-brain my-3 text-white"></i>
+                            <i class="fas fa-brain my-3 text-white bulidIconAbsolute"></i>
+                        </div>
+                    </div>
+                    <div class="px-4 pt-3">
+                        <h4>Triggers</h4>
+                        <p>
+                            Keep yourself and your systems up to date by automatically responding to changes. Triggers
+                            monitor your data to notify
+                            you when your temperature sensor gets too hot or when your DIY security system goes offline.
+                        </p>
+                    </div>  
                 </div>
-                <div class="builtCarousel p-3">
-                    <i class="fas fa-microchip mb-3"></i>
-                    <h4>Hardware</h4>
-                    <p>
-                        We have been building Internet of Things devices and kits since long before Iotonomous ever
-                        existed. Start your project
-                        with the right equipment or pick up the one last thing you need to finish. We've got hardware
-                        for all types of makers.
-                    </p>
+                <div class="builtCarousel">
+                    <div class="bg-primary">
+                        <div class="px-4">
+                            <i class="fas fa-microchip my-3 text-white"></i>
+                            <i class="fas fa-microchip my-3 text-white bulidIconAbsolute"></i>
+                        </div>
+                    </div>
+                    <div class="px-4 pt-3">
+                        <h4>Hardware</h4>
+                        <p>
+                            We have been building Internet of Things devices and kits since long before Iotonomous ever
+                            existed. Start your project
+                            with the right equipment or pick up the one last thing you need to finish. We've got hardware
+                            for all types of makers.
+                        </p>
+                    </div>
                 </div>
-                <div class="builtCarousel p-3">
-                    <i class="fas fa-users mb-3"></i>
-                    <h4>Amazing Community</h4>
-                    <p>
-                        We Love Makers! Join us on the forums, on our Discord chat server, stop by the weekly Show and
-                        Tell live stream to share
-                        your project, and subscribe to our YouTube channel to see what we're up to.
-                    </p>
+                <div class="builtCarousel">
+                    <div class="bg-primary">
+                        <div class="px-4">
+                            <i class="fas fa-users my-3 text-white"></i>
+                            <i class="fas fa-users my-3 text-white bulidIconAbsolute"></i>
+                        </div>
+                    </div>
+                    <div class="px-4 pt-3">
+                        <h4>Amazing Community</h4>
+                        <p>
+                            We Love Makers! Join us on the forums, on our Discord chat server, stop by the weekly Show and
+                            Tell live stream to share
+                            your project, and subscribe to our YouTube channel to see what we're up to.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6 text-center py-3">
@@ -266,18 +315,18 @@
         <div class="overlay"></div>
         <div class="row">
             <div class="col-lg-6 text-center">
-                <h2 style="z-index: 20 !important;" class="text-white position-relative text-center">Iotonomous Pricing
+                <h2 style="z-index: 20 !important;" class="text-white position-relative text-center">Iotonomous Online Shop
                 </h2>
                 <div class="shopProject mx-auto p-4 my-5">
                     <h5 class="text-left pb-2">
                         <b>Shop for hardware</b> designed to work great with Iotonomous.
                     </h5>
-                    <button class="btn btn-primary d-block">Shop Hardware</button>
+                    <button class="btn btn-primary d-block" onclick="window.location.href='asset/page/shop.html'">Shop Hardware</button>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="shopAPI">
-                    <h3 class="text-white position-relative text-center">Our pricing is as simple as our API.</h3>
+                    <h4 class="text-white position-relative text-center">Our pricing is as simple as our API.</h4>
                     <p class="text-white position-relative text-center">
                         Try Iotonomous for free. Unlock its full potential for $10 per month.
                     </p>
@@ -331,96 +380,64 @@
     </div>
 
     <footer class="container-fluit footer py-5">
-        <div class="container">
-            <div class="row pb-3">
-                <div class="col-md-12">
-                    <h2 class="text-center">Last but not least</h2>
-                </div>
-            </div>
-            <div class="row mb-5 pb-4">
-                <div class="col-md-3 text-center">
-                    <p>Don't forget that we have some really great documentation.</p>
-                    <a href="#" class="d-block">Check out the API DOCS</a>
-                    <a href="#">Check out the beginners' guides</a>
-                </div>
-                <div class="col-md-3 text-center">
-                    <p>All our IoT products are ready to work with Adafruit IO.</p>
-                    <a href="#" class="d-block">Iotonomous Starter Kit</a>
-                    <a href="#">Iotonomous Arduino Library</a>
-                </div>
-                <div class="col-md-6 text-center">
-                    <p>We believe Internet of Things devices should come with a well established expectation of what
-                        they will and will not do
-                        with consumer’s data.</p>
-                    <a href="#" class="d-block">Our Terms of Service</a>
-                    <a href="#">Our Privacy Policy</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 my-4">
-                    <div class="d-flex mb-2">
-                        <img src="asset/img/content/favicon.png" class="footerIcon" width="43px" alt="">
-                        <h3 class="ml-4">Iotonomous</h3>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem esse ullam quia illo labore
-                        perspiciatis pariatur blanditiis laboriosam similique cum, laborum aperiam nihil amet itaque.
-                    </p>
-                    <div class="grWhite"> </div>
-                    <div>
-                        <p>
-                            <i class="fas fa-envelope mr-3"></i> khusnul20032002@gmail.com
-                        </p>
-                    </div>
-                    <div class="grWhite"></div>
-                    <div>
-                        <p>
-                            <i class="fas fa-phone mr-3"></i> (+62)882-1726-2025
-                        </p>
-                    </div>
-                    <div class="grWhite"></div>
-                    <div>
-                        <p>
-                            <i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan, EastJava
-                        </p>
-                    </div>
-                    <div class="grWhite"></div>
-                </div>
-                <div class="col-md-3 my-4">
-                    <h5 class="mb-4">Useful Links</h5>
-                    <div class="row">
-                        <div class="col-8 link">
-                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a></p>
-                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Quick Guides</a></p>
-                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a></p>
-                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Terms of Service</a></p>
-                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Privacy Policy</a></p>
-                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Send Feedback</a></p>
-                        </div>
-                        <div class="col-4 link">
-                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a></p>
-                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a></p>
-                            <p><i class="fas fa-angle-right mr-1"></i> <a href="#">News</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 my-4">
-                    <h6>
-                        "Propel, propel, propel your craft softly down liquid solution. Ecstatically, ecstatically,
-                        ecstatically, ecstatically,
-                        existence is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
-                    </h6>
-                    <div class="text-center">
-                        <img src="asset/img/content/robotku1.png" width="70%" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="container-fluit endFooter p-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 my-4">
+					<div class="d-flex mb-2">
+						<img src="asset/img/content/favicon.png" class="footerIcon" width="43px" height="40px" alt="">
+						<h3 class="ml-4">Iotonomous</h3>
+					</div>
+					<p style="font-size: .8rem;">Pengembang project IoT berbasis Website
+					</p>
+					<div style="font-size: .8rem;">
+						<p>
+							<i class="fas fa-envelope mr-3"></i> khusnul20032002@gmail.com
+						</p>
+					</div>
+					<div style="font-size: .8rem;">
+						<p>
+							<i class="fas fa-phone mr-3"></i> (+62)882-1726-2025
+						</p>
+					</div>
+					<div style="font-size: .8rem;">
+						<p>
+							<i class="fas fa-map-marker-alt mr-3"></i> Purwosari, Pasuruan, EastJava
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3 my-4">
+					<h5 class="mb-4">Useful Links</h5>
+					<div class="row" style="font-size: .8rem;">
+						<div class="col-6 link">
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Help</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Quick Guides</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">FAQ</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Terms of Service</a></p>
+						</div>
+						<div class="col-6 link">
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Send Feedback</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">Learn</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">IoT+</a></p>
+							<p><i class="fas fa-angle-right mr-1"></i> <a href="#">News</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 my-4 position-relative">
+					<i class="fas fa-quote-left position-absolute" style="font-size: 6rem; top: 0; left: 10px; opacity: .15;"></i>
+					<h6 class="my-5 py-3">
+						"Propel, propel, propel your craft softly down liquid solution. Ecstatically, ecstatically,
+						ecstatically, ecstatically,
+						existence is simply illusion" - <a href="">Mohammad Khusnul Khuluq</a>
+					</h6>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="container-fluit endFooter p-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 pt-3">
-                    Developed by <a href="#">Kodeberkah</a>
+                    Developed by <a href="#">Kodeberkah <img src="asset/img/content/Kodebekah-Logo.png" width="30px" height="30px" alt=""></a>
                 </div>
                 <div class="col-md-6 pt-3 text-center">
                     <div class="d-inline">
@@ -467,6 +484,8 @@
             .pause(5000)
             .delete()
             .go()
+
+        $('[data-toggle="tooltip"]').tooltip();
     </script>
 
 </body>
